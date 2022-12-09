@@ -3,6 +3,7 @@ import MButton from '@mui/material/Button';
 import './App.css';
 import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS } from './components/BonusAssetsData';
+import ExtractorSection from './components/ExtractorSection';
 
 function App() {
 
@@ -80,6 +81,7 @@ function App() {
       <div>
         <div class="mt-5 container">
           <div class="row align-items-center" >
+            <ExtractorSection />
             <div class="col-6">
               <div class="card">
                 <div class="card-body">
