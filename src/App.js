@@ -63,7 +63,8 @@ function App() {
   }
 
 
-
+  // Interface definition
+  
   return (
     <div className="App" class="pb-5 bg" >
       <div class="p-3 background_violet">
@@ -81,7 +82,8 @@ function App() {
       <div>
         <div class="mt-5 container">
           <div class="row align-items-center" >
-            <ExtractorSection />
+            <ExtractorSection
+            address={currentAccount} />
             <div class="col-6">
               <div class="card">
                 <div class="card-body">
