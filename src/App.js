@@ -4,6 +4,7 @@ import './App.css';
 import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS } from './components/BonusAssetsData';
 import ExtractorSection from './components/ExtractorSection';
+import { extractorLogicWritable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
 
 function App() {
 
@@ -38,6 +39,34 @@ function App() {
     }
   }
 
+  const initializeAccount = async () => {
+
+    if (currentAccount !== "") {
+      extractorLogicWritable.initializeAccount()
+        .then(() => {
+          console.log("Account initialized correctly.");
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+
+  }
+
+  const approveExtractorsManagement = async () => {
+
+    if (currentAccount !== "") {
+      extractorTokenWritable.setApprovalForAll(TEST_EXTRACTOR_LOGIC_ADDRESS, true)
+        .then(() => {
+          console.log("Extractors management approved.");
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+
+  }
+
   const connectWallet = async () => {
 
     // Check Metamask presence
@@ -64,7 +93,7 @@ function App() {
 
 
   // Interface definition
-  
+
   return (
     <div className="App" class="pb-5 bg" >
       <div class="p-3 background_violet">
@@ -80,10 +109,16 @@ function App() {
         </nav>
       </div>
       <div>
+        <MButton sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth onClick={initializeAccount}>
+          Initialize account
+        </MButton>
+        <MButton sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth onClick={approveExtractorsManagement}>
+          Approve extractors management
+        </MButton>
         <div class="mt-5 container">
           <div class="row align-items-center" >
             <ExtractorSection
-            address={currentAccount} />
+              address={currentAccount} />
             <div class="col-6">
               <div class="card">
                 <div class="card-body">
