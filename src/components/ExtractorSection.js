@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'mui-image';
-import { ethers } from 'ethers';
 
 import peExt from './images/temp_extractor.png';
 import { Grid, Paper } from '@mui/material';
 import { Box } from '@mui/system';
-import { peTokenReadable } from './smart_contracts/MoonbaseConfig';
+import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
 
 
 function ExtractorSection(props) {
@@ -20,16 +19,16 @@ function ExtractorSection(props) {
     const [peBalance, setPeBalance] = useState(0);
     const [stakedExtractors, setStakedExtractors] = useState(0);
     const [freeExtractors, setFreeExtractors] = useState(0);
-    const [userAddress, setUserAddress] = useState("");
+
+    // Smart contract variables
+    const EXTRACTOR_TOKEN_ID = 1;
 
     // Get a readable time for the next token claim
     function getNextClaimTime(blocksToWait) {
         var secondsTime = blocksToWait * 12;    // 12 seconds to mine a block on Moonbase Alpha
         let hours = Math.floor(secondsTime / 3600);
         secondsTime = secondsTime - 3600 * hours;
-        console.log(secondsTime);
-        let minutes = Math.floor(secondsTime/60);
-        console.log(secondsTime);
+        let minutes = Math.floor(secondsTime / 60);
         secondsTime = secondsTime - 60 * minutes;
         return hours + "h " + minutes + "m " + secondsTime + "s";
     }
@@ -40,20 +39,73 @@ function ExtractorSection(props) {
     useEffect(() => {
 
         if (props.address !== "") {
-            
-            // Retrieve token balance from chain
-            peTokenReadable.balanceOf(props.address)
-            .then(balance => {
-                console.log("PE token balance: %d", balance);
-                const ownedTokens = balance / 10**18;
-                setPeBalance(ownedTokens);
-            })
-            .catch(error => {
-                console.log(error);
-            });
 
-            // Retrieve redeemable tokens from chain
+            const USER_WALLET = props.address;
+
+            // Retrieve token balance from chain
+            peTokenReadable.balanceOf(USER_WALLET)
+                .then(balance => {
+                    console.log("PE token balance: %d", balance);
+                    const ownedTokens = balance / 10 ** 18;
+                    setPeBalance(ownedTokens);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+
+            // Retrieve free extractor from chain
+            extractorTokenReadable.balanceOf(USER_WALLET, "" + EXTRACTOR_TOKEN_ID)
+                .then(freeTokens => {
+                    const _freeExtractors = parseInt("" + freeTokens);
+                    setFreeExtractors(_freeExtractors);
+                    console.log("Free extractors: %d", _freeExtractors);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+
+            // Retrieve deposited extractors from chain
+            extractorLogicReadable._depositedExtractors(USER_WALLET)
+                .then(_depositedExtractors => {
+                    console.log("Deposited extractors: %d", _depositedExtractors);
+                    const depositedPoisonExtractors = parseInt("" + _depositedExtractors);
+                    setStakedExtractors(depositedPoisonExtractors);
+
+                    // Retrieve extraction rate from chain
+                    if (stakedExtractors !== 0) {
+                        extractorLogicReadable.getExtractionRate(stakedExtractors)
+                            .then(_calculatedRate => {
+                                let currentRate = (_calculatedRate / (10 ** 18)).toFixed(5);
+                                console.log("Current extraction rate per day %f", currentRate);
+                                setExtractionRateo(currentRate);
+                            })
+                            .catch(error => {
+                                console.log(error);
+                            })
+                    } else {
+                        console.log("Zero extractors staked...");
+                    }
+
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+
+            // Retrieve deposited extractors from chain
+            extractorLogicWritable.getClaimableTokens()
+                .then(_claimableTokens => {
+                    let currentClaimableAmount = (parseInt(_claimableTokens + "") / (10 ** 18)).toFixed(2);;
+                    console.log("Claimable PE tokens %f", currentClaimableAmount);
+                    setRedeemableTokens(currentClaimableAmount);
+                });
+
+            // Retrieve blocks before next claim
             
+            // GET NEXT CLAIM BLOCK 
+
+
+
+
         }
 
     });

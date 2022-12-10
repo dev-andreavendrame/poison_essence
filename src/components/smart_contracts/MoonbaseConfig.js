@@ -3,9 +3,9 @@ import PoisonExtractorToken from './ABI/PlaceholderExtractor.json';
 import PoisonEssenceExtractorLogic from './ABI/PoisonEssenceExtractor.json';
 
 // Smart Contract addresses
-const PLACEHOLDER_EXTRACTOR_ADDRESS = "0xB7CC731b4fbE236D3b8dCBcFaF166E7d7726d0a1";
-const TEST_TOKEN_ADDRESS = "0x523FC26F7c1cDDa0274F698e43fc6361C5c3E7A6";
-const TEST_EXTRACTOR_LOGIC_ADDRESS = "0x1072b6Dd01b32909ed6e86D4325156Ef470728dD";
+export const PLACEHOLDER_EXTRACTOR_ADDRESS = "0xB7CC731b4fbE236D3b8dCBcFaF166E7d7726d0a1";
+export const TEST_TOKEN_ADDRESS = "0x523FC26F7c1cDDa0274F698e43fc6361C5c3E7A6";
+export const TEST_EXTRACTOR_LOGIC_ADDRESS = "0x1072b6Dd01b32909ed6e86D4325156Ef470728dD";
 
 // Smart Contract ABIs
 const PE_TOKEN_ABI = PoisonEssenceToken['abi'];
