@@ -26,4 +26,3 @@ yarn-error.log*
 
 # Custom
 ./package-lock.json
-package-lock.json

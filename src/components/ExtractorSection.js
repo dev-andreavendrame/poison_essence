@@ -1,28 +1,38 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'mui-image';
 
 import peExt from './images/temp_extractor.png';
-import bgExt from './images/bg_extractor.png';
 import { Grid, Paper } from '@mui/material';
 import { Box } from '@mui/system';
 
 
-
 function ExtractorSection(props) {
 
+    // React variables
+    const [extractionRateo, setExtractionRateo] = useState(0);
+    const [redeemableTokens, setRedeemableTokens] = useState(0);
+    const [blocksToNextClaim, setBlocksToNextClaim] = useState(1562);
+    const [peBalance, setPeBalance] = useState(0);
+    const [stakedExtractors, setStakedExtractors] = useState(0);
+    const [freeExtractors, setFreeExtractors] = useState(0);
+
+
+    function getNextClaimTime(blocksToWait) {
+        var secondsTime = blocksToWait * 12;    // 12 seconds to mine a block on Moonbase Alpha
+        let hours = Math.floor(secondsTime / 3600);
+        secondsTime = secondsTime - 3600 * hours;
+        console.log(secondsTime);
+        let minutes = Math.floor(secondsTime/60);
+        console.log(secondsTime);
+        secondsTime = secondsTime - 60 * minutes;
+        return hours + "h " + minutes + "m " + secondsTime + "s";
+    }
+
     // ---------- external parameters
-    // extraction_rateo
-    // redeemable_tokens
     // time_to_claim
-    // owned_tokens
-    // owned_extractors
-    // free_extractors
-    // staked_extractors
 
     return (
         <Box >
@@ -37,13 +47,13 @@ function ExtractorSection(props) {
                 <Grid item xs={6}>
                     <Box className='extDataBox' p={1} sx={{ borderRadius: 8, mb: 10, p: 3 }} >
                         <Typography sx={{ ml: 1, color: 'white' }} variant='h5'>
-                            Extraction rate: 10 PE/day
+                            Extraction rate: {extractionRateo} PE/day
                         </Typography>
                         <Typography sx={{ ml: 1, color: 'white' }} variant='h5'>
-                            Redeemable tokens: 132 PE
+                            Redeemable tokens: {redeemableTokens} PE
                         </Typography>
                         <Typography sx={{ ml: 1, mb: 3.5, color: 'white' }} variant='h5'>
-                            Time to next available claim: 1h 25m 15s
+                            Time to next available claim: {getNextClaimTime(blocksToNextClaim)}
                         </Typography>
 
                         <Grid container spacing={0} >
@@ -55,26 +65,23 @@ function ExtractorSection(props) {
                             <Grid item xs={8.5} sx={{ display: 'flex', alignItems: 'end' }}>
                                 <Box sx={{ mt: 2.5 }}>
                                     <Typography sx={{ fontSize: 15, ml: 3, color: 'white' }} variant='overline' >
-                                        Owned tokens: 250
+                                        Owned tokens: {peBalance} PE
                                     </Typography>
                                 </Box>
                             </Grid>
                         </Grid>
 
-
                     </Box>
-
-
 
                     <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 3, pb: 3, pl: 3, pr: 5 }} >
                         <Typography sx={{ ml: 1, color: 'white' }} variant='h5'>
-                            Owned Extractors: 10
+                            Owned Extractors: {stakedExtractors + freeExtractors}
                         </Typography>
                         <Typography sx={{ ml: 1, color: 'white' }} variant='h5'>
-                            Free Extractors: 3
+                            Free Extractors: {freeExtractors}
                         </Typography>
                         <Typography sx={{ ml: 1, mb: 3.5, color: 'white' }} variant='h5'>
-                            Extractors in staking: 7
+                            Extractors in staking: {stakedExtractors}
                         </Typography>
 
 
