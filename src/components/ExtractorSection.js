@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'mui-image';
+import { ethers } from 'ethers';
 
 import peExt from './images/temp_extractor.png';
 import { Grid, Paper } from '@mui/material';
 import { Box } from '@mui/system';
+import { peTokenReadable } from './smart_contracts/MoonbaseConfig';
 
 
 function ExtractorSection(props) {
@@ -18,8 +20,9 @@ function ExtractorSection(props) {
     const [peBalance, setPeBalance] = useState(0);
     const [stakedExtractors, setStakedExtractors] = useState(0);
     const [freeExtractors, setFreeExtractors] = useState(0);
+    const [userAddress, setUserAddress] = useState("");
 
-
+    // Get a readable time for the next token claim
     function getNextClaimTime(blocksToWait) {
         var secondsTime = blocksToWait * 12;    // 12 seconds to mine a block on Moonbase Alpha
         let hours = Math.floor(secondsTime / 3600);
@@ -33,6 +36,27 @@ function ExtractorSection(props) {
 
     // ---------- external parameters
     // time_to_claim
+
+    useEffect(() => {
+
+        if (props.address !== "") {
+            
+            // Retrieve token balance from chain
+            peTokenReadable.balanceOf(props.address)
+            .then(balance => {
+                console.log("PE token balance: %d", balance);
+                const ownedTokens = balance / 10**18;
+                setPeBalance(ownedTokens);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+            // Retrieve redeemable tokens from chain
+            
+        }
+
+    });
 
     return (
         <Box >
