@@ -42,7 +42,7 @@ function App() {
   const initializeAccount = async () => {
 
     if (currentAccount !== "") {
-      extractorLogicWritable.initializeAccount()
+      extractorLogicWritable.initializeNewAccount(currentAccount)
         .then(() => {
           console.log("Account initialized correctly.");
         })
