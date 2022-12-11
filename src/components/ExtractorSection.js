@@ -174,20 +174,18 @@ function ExtractorSection(props) {
                         <Divider />
 
                         <Grid container spacing={1} >
-                            <Grid item xs={3}>
+                            <Grid item xs={5}>
                                 <TextField required id="outlined-required" label="Extractors number" defaultValue="0" className="textFieldCustom"  />
                             </Grid>
                             <Grid item xs={3}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='medium' fullWidth onClick={claimTokens}>
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={claimTokens}>
                                     DEPOSIT EXTRACTOR
                                 </Button>
                             </Grid>
                             <Grid item xs={3}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='medium' fullWidth onClick={claimTokens}>
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={claimTokens}>
                                     WITHDRAW EXTRACTOR
                                 </Button>
-                            </Grid>
-                            <Grid item xs={3}>
                             </Grid>
                         </Grid>
                         <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 3, borderRadius: 2 }} variant="contained" size="large" fullWidth>
