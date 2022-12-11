@@ -12,30 +12,33 @@ import { Grid } from '@mui/material';
 function BonusAssetCard(props) {
 
     return (
-        <Card sx={{ minWidth: "25%", maxWidth: "50%", borderRadius: 3, boxShadow: 8 }}>
+
+
+        <Card sx={{ maxWidth: "20%", borderRadius: 3, boxShadow: 24, backgroundColor: '#7f33c5', m: 3 }}>
             <CardContent>
-                <Typography sx={{ mb: 1.5, fontWeight: 'bold', textAlign: 'left', fontSize: 26 }} color="text.primary">
+                <Typography sx={{ mb: 1.5, fontWeight: 'bold', textAlign: 'left', fontSize: 26, color: "white" }} >
                     {props.name}
                 </Typography>
-                <Image sx={{ borderRadius: 3, boxShadow: 3 }} src={props.assetImage} alt="Asset cover" borderRadius='50%' />
-                <Typography sx={{ fontSize: 20 }} color="text.primary">
-                    Price: {props.cost}
-                </Typography>
+                <Image sx={{ borderRadius: 3, boxShadow: 6 }} src={props.assetImage} alt="Asset cover" borderRadius='50%' />
+                <Box sx={{ pl: 1, pr: 1 }}>
+                    <Typography sx={{ fontSize: 20, color: "white", mt: 2 }}>
+                        Price: {props.cost}
+                    </Typography>
+                </Box>
             </CardContent>
             <CardActions>
-                <Grid sx={{ pb: 2, pl: 2, pr: 2 }} container spacing={3}>
-                    <Grid item bt>
-                        <Button variant="contained" size="medium">
+                <Grid sx={{ pb: 2, pl: 2, pr: 2 }} container spacing={1}>
+                    <Grid item xs={4}>
+                        <Button sx={{ backgroundColor: '#a1c126' }} variant="contained" size="medium">
                             Buy
                         </Button>
                     </Grid>
-                    <Grid item vd>
-
-                    </Grid>
-                    <Grid item tx>
-                        <Typography sx={{ mt: 5 }} variant='overline' color="text.secondary" align='right'>
-                            Number owned: 
-                        </Typography>
+                    <Grid item xs={8}>
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-end' }} >
+                            <Typography sx={{ color: 'white' }} variant='overline'  >
+                                Owned: 0
+                            </Typography>
+                        </Box>
                     </Grid>
                 </Grid>
 

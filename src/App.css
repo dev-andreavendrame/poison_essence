@@ -54,7 +54,7 @@
 
   /* Center and scale the image nicely */
   background-position: top;
-  background-repeat: no-repeat;
+  background-size: cover;
   align-items: "center";
   position: "relative";
   z-index: -1;

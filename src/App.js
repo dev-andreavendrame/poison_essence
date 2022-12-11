@@ -5,6 +5,7 @@ import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS } from './components/BonusAssetsData';
 import ExtractorSection from './components/ExtractorSection';
 import { extractorLogicWritable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
+import { Grid } from '@mui/material';
 
 function App() {
 
@@ -119,14 +120,9 @@ function App() {
           <div class="row align-items-center" >
             <ExtractorSection
               address={currentAccount} />
-            <div class="col-6">
-              <div class="card">
-                <div class="card-body">
-                  test
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
+            
+            <Grid container spacing={2} direction="row" display="flex" justifyContent="flex-start" alignItems="flex-start" sx={{ mt: 5 }}>
+
               {
                 BONUS_ASSETS.map((info) => {
                   return (
@@ -139,7 +135,9 @@ function App() {
                 }
                 )
               }
-            </div>
+
+
+            </Grid>
           </div>
         </div>
       </div>
