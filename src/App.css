@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -71,11 +72,15 @@
 
 }
 
-
 .extDataBox {
   background-image: linear-gradient(to bottom right, rgba(180, 180, 180, 0.3), rgba(255, 255, 255, 0));
   backdrop-filter: blur(20px);
   background-color: rgba(85, 27, 140, 0.5);
   box-shadow: 10px 10px 10px rgba(30, 30, 30, 0.5);
 
+}
+
+
+.textFieldCustom {
+  border-color: white;
 }

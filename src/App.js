@@ -4,14 +4,17 @@ import './App.css';
 import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS } from './components/BonusAssetsData';
 import ExtractorSection from './components/ExtractorSection';
-import { extractorLogicWritable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
-import { AppBar, Grid } from '@mui/material';
+import { extractorLogicWritable, extractorTokenWritable, peTokenReadable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
+import { AppBar, Grid, IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
+import RefreshIcon from '@mui/icons-material/Refresh';
+
 
 function App() {
 
   // React
   const [currentAccount, setCurrentAccount] = useState("");
+  const [refreshIndex, setRefreshIndex] = useState(0);
 
   console.log(BONUS_ASSETS);
   useEffect(() => {
@@ -22,8 +25,8 @@ function App() {
 
     if (currentAccount === "") {
       console.log("Not logged in");
-      return (<MButton variant="contained" style={{
-        borderRadius: 10,
+      return (<MButton variant="contained" sx={{
+        borderRadius: 3,
         backgroundColor: "#a1c126",
         padding: "10px 15px",
         fontSize: "13px"
@@ -93,6 +96,10 @@ function App() {
 
   }
 
+  const refreshDapp = () => {
+    setRefreshIndex(refreshIndex + 1);
+  }
+
 
   // Interface definition
 
@@ -109,12 +116,17 @@ function App() {
             </MButton>
           </Box>
           <Box sx={{ flexShrink: 0 }}>
-            <MButton sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 2, borderRadius: 2 }} variant="contained" size="medium" onClick={approveExtractorsManagement}>
+            <MButton sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2 }} variant="contained" size="medium" onClick={approveExtractorsManagement}>
               Approve extractors management
             </MButton>
           </Box>
-          <Box sx={{ flexShrink: 0, ml: 5, mr: 4 }}>
+          <Box sx={{ flexShrink: 0, ml: 3, mr: 3 }}>
             {updateConnectedWallet()}
+          </Box>
+          <Box>
+            <MButton onClick={refreshDapp} sx={{ backgroundColor: "#a1c126", mr: 3, borderRadius: 25, p: 1, boxShadow: 6  }} variant="contained" size='small'  >
+              <RefreshIcon fontSize='large' />
+            </MButton>
           </Box>
         </Box>
       </AppBar>
@@ -124,28 +136,29 @@ function App() {
             <ExtractorSection
               address={currentAccount} />
 
-            <Grid container spacing={2} direction="row" display="flex" justifyContent="flex-start" alignItems="flex-start" sx={{ mt: 5 }}>
-
-              {
-                BONUS_ASSETS.map((info) => {
-                  return (
-                    <BonusAssetCard
-                      key={info['id']}
-                      name={info['name']}
-                      cost={info['cost']}
-                      assetImage={info['image']}
-                    />);
-                }
-                )
-              }
-
-
-            </Grid>
           </div>
+          <Grid container spacing={2} direction="row" display="flex" justifyContent="flex-start" alignItems="flex-start" sx={{ mt: 5 }}>
+
+            {
+              BONUS_ASSETS.map((info) => {
+                return (
+                  <BonusAssetCard
+                    key={info['id']}
+                    name={info['name']}
+                    cost={info['cost']}
+                    assetImage={info['image']}
+                  />);
+              }
+              )
+            }
+
+
+          </Grid>
+
+
+
         </div>
       </div>
     </div >
   );
-}
-
-export default App;
+} export default App;
