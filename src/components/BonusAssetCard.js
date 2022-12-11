@@ -29,7 +29,7 @@ function BonusAssetCard(props) {
             <CardActions>
                 <Grid sx={{ pb: 2, pl: 2, pr: 2 }} container spacing={1}>
                     <Grid item xs={4}>
-                        <Button sx={{ backgroundColor: '#a1c126' }} variant="contained" size="medium">
+                        <Button sx={{ backgroundColor: '#a1c126' }} variant="contained" size="medium" disabled>
                             Buy
                         </Button>
                     </Grid>
