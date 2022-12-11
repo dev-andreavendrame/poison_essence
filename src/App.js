@@ -5,9 +5,6 @@ import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS } from './components/BonusAssetsData';
 import ExtractorSection from './components/ExtractorSection';
 import { extractorLogicWritable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
-import { AppBar, Grid } from '@mui/material';
-import Box from '@mui/material/Box';
-import { Container } from '@mui/system';
 
 function App() {
 
@@ -148,7 +145,7 @@ function App() {
 
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

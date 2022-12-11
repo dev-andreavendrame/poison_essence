@@ -4,11 +4,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'mui-image';
 import TextField from '@mui/material/TextField';
+import TextField from '@mui/material/TextField';
 
 import peExt from './images/temp_extractor.png';
-import { Divider, Grid, Paper } from '@mui/material';
+import peExtbw from './images/extractor_bw.png';
+import { Divider, Divider, Grid, Paper } from '@mui/material';
 import { Box } from '@mui/system';
-import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
+import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
 
 
 function ExtractorSection(props) {
@@ -16,22 +18,29 @@ function ExtractorSection(props) {
     // React variables
     const [extractionRateo, setExtractionRateo] = useState(0);
     const [redeemableTokens, setRedeemableTokens] = useState(0);
-    const [blocksToNextClaim, setBlocksToNextClaim] = useState(1562);
+    const [blocksToNextClaim, setBlocksToNextClaim] = useState(0);
     const [peBalance, setPeBalance] = useState(0);
     const [stakedExtractors, setStakedExtractors] = useState(0);
     const [freeExtractors, setFreeExtractors] = useState(0);
+    const [message, setMessage] = useState('');
+
+
 
     // Smart contract variables
     const EXTRACTOR_TOKEN_ID = 1;
 
     // Get a readable time for the next token claim
     function getNextClaimTime(blocksToWait) {
-        var secondsTime = blocksToWait * 12;    // 12 seconds to mine a block on Moonbase Alpha
-        let hours = Math.floor(secondsTime / 3600);
-        secondsTime = secondsTime - 3600 * hours;
-        let minutes = Math.floor(secondsTime / 60);
-        secondsTime = secondsTime - 60 * minutes;
-        return hours + "h " + minutes + "m " + secondsTime + "s";
+        if (blocksToWait === 0) {
+            return "NOW!";
+        } else {
+            var secondsTime = blocksToWait * 12;    // 12 seconds to mine a block on Moonbase Alpha
+            let hours = Math.floor(secondsTime / 3600);
+            secondsTime = secondsTime - 3600 * hours;
+            let minutes = Math.floor(secondsTime / 60);
+            secondsTime = secondsTime - 60 * minutes;
+            return hours + "h " + minutes + "m " + secondsTime + "s";
+        }
     }
 
     // Call claim function
@@ -45,8 +54,34 @@ function ExtractorSection(props) {
             });
     }
 
-    // ---------- external parameters
-    // time_to_claim
+    const handleChange = event => {
+        setMessage(event.target.value);
+
+        console.log('Extractors to management value:', event.target.value);
+    };
+
+    const depositExtractors = () => {
+        const extractorsToManage = parseInt(message);
+        extractorLogicWritable.depositExtractors(extractorsToManage)
+            .then(() => {
+                console.log("Depositing %d extractors...", extractorsToManage)
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    };
+
+    const withdrawExtractors = () => {
+        const extractorsToManage = parseInt(message);
+        extractorLogicWritable.withdrawExtractors(extractorsToManage)
+            .then(() => {
+                console.log("Withdrawing %d extractors...", extractorsToManage)
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
 
     useEffect(() => {
 
@@ -77,7 +112,7 @@ function ExtractorSection(props) {
                 });
 
             // Retrieve deposited extractors from chain
-            extractorLogicReadable.getDepositedExtractors()
+            extractorLogicReadable.getDepositedExtractors(USER_WALLET)
                 .then(_depositedExtractors => {
                     console.log("Deposited extractors: %d", _depositedExtractors);
                     const depositedPoisonExtractors = parseInt("" + _depositedExtractors);
@@ -112,14 +147,19 @@ function ExtractorSection(props) {
                 });
 
             // Retrieve blocks before next claim
-
-            //
-
-
-
+            extractorLogicReadable.getBlocksBeforeNextClaim(USER_WALLET)
+                .then(_blocksToWait => {
+                    console.log("Block to wait for next claim: %d", _blocksToWait);
+                    let blocks = parseInt("" + _blocksToWait);
+                    setBlocksToNextClaim(blocks);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
         }
 
     });
+
 
     return (
         <Box >
@@ -127,7 +167,7 @@ function ExtractorSection(props) {
                 <Grid item xs={6}>
                     <Paper className='extractorBackground' elevation={24} sx={{ borderRadius: 8 }}>
                         <Box p={1}>
-                            <Image src={peExt} alt="extractor gif" elevation={24} />
+                            <Image src={stakedExtractors === 0 ? peExtbw : peExt} alt="extractor gif" elevation={24} />
                         </Box>
                     </Paper>
                 </Grid>
@@ -152,7 +192,7 @@ function ExtractorSection(props) {
                             <Grid item xs={8.5} sx={{ display: 'flex', alignItems: 'end' }}>
                                 <Box sx={{ mt: 2.5 }}>
                                     <Typography sx={{ fontSize: 15, ml: 3, color: 'white' }} variant='overline' >
-                                        Owned tokens: {peBalance} PE
+                                        Owned tokens: {peBalance.toFixed(2)} PE
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -171,26 +211,34 @@ function ExtractorSection(props) {
                             Extractors in staking: {stakedExtractors}
                         </Typography>
 
-                        <Divider />
-
                         <Grid container spacing={1} >
                             <Grid item xs={5}>
-                                <TextField required id="outlined-required" label="Extractors number" defaultValue="0" className="textFieldCustom"  />
+                                <TextField
+                                    required
+                                    id="message"
+                                    name="message"
+                                    onChange={handleChange}
+                                    label="Extractors number"
+                                    defaultValue="0"
+                                    className="textFieldCustom" />
                             </Grid>
                             <Grid item xs={3}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={claimTokens}>
-                                    DEPOSIT EXTRACTOR
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={depositExtractors}>
+                                    Deposit
                                 </Button>
                             </Grid>
                             <Grid item xs={3}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={claimTokens}>
-                                    WITHDRAW EXTRACTOR
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={withdrawExtractors}>
+                                    Withdraw
                                 </Button>
                             </Grid>
                         </Grid>
-                        <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 3, borderRadius: 2 }} variant="contained" size="large" fullWidth>
-                            Buy new Extractor
-                        </Button>
+
+                        <a href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/105358272762175259458146981548426915326652569204453104744298191896506852704456" rel="noreferrer">
+                            <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth>
+                                Buy new Extractor
+                            </Button>
+                        </a>
                     </Box>
                 </Grid>
             </Grid>
