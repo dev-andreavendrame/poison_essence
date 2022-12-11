@@ -33,6 +33,17 @@ function ExtractorSection(props) {
         return hours + "h " + minutes + "m " + secondsTime + "s";
     }
 
+    // Call claim function
+    function claimTokens() {
+        extractorLogicWritable.claimTokens()
+        .then(_claimedTokens => {
+            console.log("Claimed %d tokens", _claimedTokens);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
     // ---------- external parameters
     // time_to_claim
 
@@ -75,7 +86,7 @@ function ExtractorSection(props) {
                     if (stakedExtractors !== 0) {
                         extractorLogicReadable.getExtractionRate(stakedExtractors)
                             .then(_calculatedRate => {
-                                let currentRate = (_calculatedRate / (10 ** 18)).toFixed(5);
+                                let currentRate = (_calculatedRate / (10 ** 18) * 7200).toFixed(5);
                                 console.log("Current extraction rate per day %f", currentRate);
                                 setExtractionRateo(currentRate);
                             })
@@ -101,8 +112,7 @@ function ExtractorSection(props) {
 
             // Retrieve blocks before next claim
             
-            // GET NEXT CLAIM BLOCK 
-
+            //
 
 
 
@@ -134,7 +144,7 @@ function ExtractorSection(props) {
 
                         <Grid container spacing={0} >
                             <Grid item xs={3.5}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size='large' fullWidth >
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size='large' fullWidth onClick={claimTokens}>
                                     CLAIM
                                 </Button>
                             </Grid>
