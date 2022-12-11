@@ -5,8 +5,9 @@ import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS } from './components/BonusAssetsData';
 import ExtractorSection from './components/ExtractorSection';
 import { extractorLogicWritable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
-import { Grid } from '@mui/material';
+import { AppBar, Grid } from '@mui/material';
 import Box from '@mui/material/Box';
+import { Container } from '@mui/system';
 
 function App() {
 
@@ -22,8 +23,8 @@ function App() {
 
     if (currentAccount === "") {
       console.log("Not logged in");
-      return (<MButton variant="contained" style={{
-        borderRadius: 10,
+      return (<MButton variant="contained" sx={{
+        borderRadius: 3,
         backgroundColor: "#a1c126",
         padding: "10px 15px",
         fontSize: "13px"
@@ -98,48 +99,50 @@ function App() {
 
   return (
     <div className="App" class="pb-5 bg" >
-      <div class="p-3 background_violet">
-        <nav class="navbar navbar-expand-lg navbar-light" color="#551b8c">
-          <div class="container-fluid">
-            <div class="px-5">
-              <h3 class="text-light">Poison Essence</h3>
-            </div>
-            <div class="px-5">
-              {updateConnectedWallet()}
-            </div>
-          </div>
-        </nav>
-      </div>
+      <AppBar position="static" sx={{ height: 100, backgroundColor: "#551b8c", boxShadow: 24 }}>
+        <Box sx={{ display: "flex", mt: 3 }}>
+          <Box sx={{ width: '100%', ml: 4 }}>
+            <h2 class="text-light">Poison Essence</h2>
+          </Box>
+          <Box sx={{ flexShrink: 0 }}>
+            <MButton sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size="medium" onClick={initializeAccount}>
+              Initialize account
+            </MButton>
+          </Box>
+          <Box sx={{ flexShrink: 0 }}>
+            <MButton sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 2, borderRadius: 2 }} variant="contained" size="medium" onClick={approveExtractorsManagement}>
+              Approve extractors management
+            </MButton>
+          </Box>
+          <Box sx={{ flexShrink: 0, ml: 5, mr: 4 }}>
+            {updateConnectedWallet()}
+          </Box>
+        </Box>
+      </AppBar>
       <div>
-        <MButton sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth onClick={initializeAccount}>
-          Initialize account
-        </MButton>
-        <MButton sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth onClick={approveExtractorsManagement}>
-          Approve extractors management
-        </MButton>
         <div class="mt-5 container">
           <div class="row align-items-center" >
             <ExtractorSection
               address={currentAccount} />
 
           </div>
-            <Grid container spacing={2} direction="row" display="flex" justifyContent="flex-start" alignItems="flex-start" sx={{ mt: 5 }}>
+          <Grid container spacing={2} direction="row" display="flex" justifyContent="flex-start" alignItems="flex-start" sx={{ mt: 5 }}>
 
-              {
-                BONUS_ASSETS.map((info) => {
-                  return (
-                    <BonusAssetCard
-                      key={info['id']}
-                      name={info['name']}
-                      cost={info['cost']}
-                      assetImage={info['image']}
-                    />);
-                }
-                )
+            {
+              BONUS_ASSETS.map((info) => {
+                return (
+                  <BonusAssetCard
+                    key={info['id']}
+                    name={info['name']}
+                    cost={info['cost']}
+                    assetImage={info['image']}
+                  />);
               }
+              )
+            }
 
 
-            </Grid>
+          </Grid>
 
 
 
