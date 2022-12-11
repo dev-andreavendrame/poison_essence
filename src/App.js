@@ -25,8 +25,8 @@ function App() {
 
     if (currentAccount === "") {
       console.log("Not logged in");
-      return (<MButton variant="contained" style={{
-        borderRadius: 10,
+      return (<MButton variant="contained" sx={{
+        borderRadius: 3,
         backgroundColor: "#a1c126",
         padding: "10px 15px",
         fontSize: "13px"
@@ -136,24 +136,27 @@ function App() {
             <ExtractorSection
               address={currentAccount} />
 
-            <Grid container spacing={2} direction="row" display="flex" justifyContent="flex-start" alignItems="flex-start" sx={{ mt: 5 }}>
-
-              {
-                BONUS_ASSETS.map((info) => {
-                  return (
-                    <BonusAssetCard
-                      key={info['id']}
-                      name={info['name']}
-                      cost={info['cost']}
-                      assetImage={info['image']}
-                    />);
-                }
-                )
-              }
-
-
-            </Grid>
           </div>
+          <Grid container spacing={2} direction="row" display="flex" justifyContent="flex-start" alignItems="flex-start" sx={{ mt: 5 }}>
+
+            {
+              BONUS_ASSETS.map((info) => {
+                return (
+                  <BonusAssetCard
+                    key={info['id']}
+                    name={info['name']}
+                    cost={info['cost']}
+                    assetImage={info['image']}
+                  />);
+              }
+              )
+            }
+
+
+          </Grid>
+
+
+
         </div>
       </div>
     </div >
