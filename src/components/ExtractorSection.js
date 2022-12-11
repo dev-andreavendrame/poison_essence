@@ -4,11 +4,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'mui-image';
 import TextField from '@mui/material/TextField';
-import TextField from '@mui/material/TextField';
 
 import peExt from './images/temp_extractor.png';
 import peExtbw from './images/extractor_bw.png';
-import { Divider, Divider, Grid, Paper } from '@mui/material';
+import { Divider, Grid, Paper } from '@mui/material';
 import { Box } from '@mui/system';
 import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
 
@@ -173,13 +172,16 @@ function ExtractorSection(props) {
                 </Grid>
                 <Grid item xs={6}>
                     <Box className='extDataBox' p={1} sx={{ borderRadius: 8, mb: 10, p: 3 }} >
-                        <Typography sx={{ ml: 1, color: 'white' }} variant='h5'>
+                        <Typography sx={{ ml: 1, mb: 1, color: 'white', fontWeight: 'bold' }} variant='h4'>
+                            PE Tokens management
+                        </Typography>
+                        <Typography sx={{ ml: 1, color: 'white', fontWeight: 'light' }} variant='h6'>
                             Extraction rate: {extractionRateo} PE/day
                         </Typography>
-                        <Typography sx={{ ml: 1, color: 'white' }} variant='h5'>
+                        <Typography sx={{ ml: 1, color: 'white', fontWeight: 'light' }} variant='h6'>
                             Redeemable tokens: {redeemableTokens} PE
                         </Typography>
-                        <Typography sx={{ ml: 1, mb: 3.5, color: 'white' }} variant='h5'>
+                        <Typography sx={{ ml: 1, mb: 3.5, color: 'white', fontWeight: 'light' }} variant='h6'>
                             Time to next available claim: {getNextClaimTime(blocksToNextClaim)}
                         </Typography>
 
@@ -201,13 +203,16 @@ function ExtractorSection(props) {
                     </Box>
 
                     <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 3, pb: 3, pl: 3, pr: 5 }} >
-                        <Typography sx={{ ml: 1, color: 'white' }} variant='h5'>
+                        <Typography sx={{ ml: 1, mb: 1, color: 'white', fontWeight: 'bold' }} variant='h4'>
+                            Extractors management
+                        </Typography>
+                        <Typography sx={{ ml: 1, color: 'white', fontWeight: 'light' }} variant='h6'>
                             Owned Extractors: {stakedExtractors + freeExtractors}
                         </Typography>
-                        <Typography sx={{ ml: 1, color: 'white' }} variant='h5'>
+                        <Typography sx={{ ml: 1, color: 'white', fontWeight: 'light' }} variant='h6'>
                             Free Extractors: {freeExtractors}
                         </Typography>
-                        <Typography sx={{ ml: 1, mb: 3.5, color: 'white' }} variant='h5'>
+                        <Typography sx={{ ml: 1, mb: 4, color: 'white', fontWeight: 'light' }} variant='h6'>
                             Extractors in staking: {stakedExtractors}
                         </Typography>
 
@@ -223,19 +228,19 @@ function ExtractorSection(props) {
                                     className="textFieldCustom" />
                             </Grid>
                             <Grid item xs={3}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={depositExtractors}>
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={depositExtractors}>
                                     Deposit
                                 </Button>
                             </Grid>
                             <Grid item xs={3}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={withdrawExtractors}>
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={withdrawExtractors}>
                                     Withdraw
                                 </Button>
                             </Grid>
                         </Grid>
 
                         <a href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/105358272762175259458146981548426915326652569204453104744298191896506852704456" rel="noreferrer">
-                            <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth>
+                            <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 2, borderRadius: 2 }} variant="contained" size="large" fullWidth>
                                 Buy new Extractor
                             </Button>
                         </a>
