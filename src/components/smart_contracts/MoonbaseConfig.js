@@ -4,7 +4,7 @@ import PoisonEssenceExtractorLogic from './ABI/PoisonEssenceExtractor.json';
 
 // Smart Contract addresses
 export const PLACEHOLDER_EXTRACTOR_ADDRESS = "0xB7CC731b4fbE236D3b8dCBcFaF166E7d7726d0a1";
-export const TEST_TOKEN_ADDRESS = "0x523FC26F7c1cDDa0274F698e43fc6361C5c3E7A6";
+export const TEST_TOKEN_ADDRESS = "0xf21dACf7CF1149917418f886590A1C1CAc535A0D";
 export const TEST_EXTRACTOR_LOGIC_ADDRESS = "0x3902c23163Ce790AFB6F53f3DfA56d5731354AE4";
 
 // Smart Contract ABIs
