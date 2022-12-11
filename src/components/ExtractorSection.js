@@ -76,7 +76,7 @@ function ExtractorSection(props) {
                 });
 
             // Retrieve deposited extractors from chain
-            extractorLogicReadable.getDepositedExtractors()
+            extractorLogicReadable.getDepositedExtractors(USER_WALLET)
                 .then(_depositedExtractors => {
                     console.log("Deposited extractors: %d", _depositedExtractors);
                     const depositedPoisonExtractors = parseInt("" + _depositedExtractors);
