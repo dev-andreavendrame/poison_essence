@@ -9,7 +9,7 @@ import peExt from './images/temp_extractor.png';
 import peExtbw from './images/extractor_bw.png';
 import { Divider, Grid, Paper } from '@mui/material';
 import { Box } from '@mui/system';
-import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
+import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
 
 
 function ExtractorSection(props) {
@@ -21,6 +21,9 @@ function ExtractorSection(props) {
     const [peBalance, setPeBalance] = useState(0);
     const [stakedExtractors, setStakedExtractors] = useState(0);
     const [freeExtractors, setFreeExtractors] = useState(0);
+    const [message, setMessage] = useState('');
+
+
 
     // Smart contract variables
     const EXTRACTOR_TOKEN_ID = 1;
@@ -48,6 +51,34 @@ function ExtractorSection(props) {
             .catch(error => {
                 console.log(error);
             });
+    }
+
+    const handleChange = event => {
+        setMessage(event.target.value);
+
+        console.log('Extractors to management value:', event.target.value);
+    };
+
+    const depositExtractors = () => {
+        const extractorsToManage = parseInt(message);
+        extractorLogicWritable.depositExtractors(extractorsToManage)
+        .then(() => {
+            console.log("Depositing %d extractors...", extractorsToManage)
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    };
+
+    const withdrawExtractors = () => {
+        const extractorsToManage = parseInt(message);
+        extractorLogicWritable.withdrawExtractors(extractorsToManage)
+        .then(() => {
+            console.log("Withdrawing %d extractors...", extractorsToManage)
+        })
+        .catch(error => {
+            console.log(error);
+        });
     }
 
 
@@ -115,7 +146,6 @@ function ExtractorSection(props) {
                 });
 
             // Retrieve blocks before next claim
-
             extractorLogicReadable.getBlocksBeforeNextClaim(USER_WALLET)
                 .then(_blocksToWait => {
                     console.log("Block to wait for next claim: %d", _blocksToWait);
@@ -129,13 +159,14 @@ function ExtractorSection(props) {
 
     });
 
+
     return (
         <Box >
             <Grid sx={{ mb: 5 }} container spacing={5}>
                 <Grid item xs={6}>
                     <Paper className='extractorBackground' elevation={24} sx={{ borderRadius: 8 }}>
                         <Box p={1}>
-                            <Image src={stakedExtractors == 0 ? peExtbw : peExt} alt="extractor gif" elevation={24} />
+                            <Image src={stakedExtractors === 0 ? peExtbw : peExt} alt="extractor gif" elevation={24} />
                         </Box>
                     </Paper>
                 </Grid>
@@ -179,20 +210,25 @@ function ExtractorSection(props) {
                             Extractors in staking: {stakedExtractors}
                         </Typography>
 
-                        <Divider />
-
                         <Grid container spacing={1} >
                             <Grid item xs={5}>
-                                <TextField required id="outlined-required" label="Extractors number" defaultValue="0" className="textFieldCustom"  />
+                                <TextField
+                                    required
+                                    id="message"
+                                    name="message"
+                                    onChange={handleChange}
+                                    label="Extractors number"
+                                    defaultValue="0"
+                                    className="textFieldCustom" />
                             </Grid>
                             <Grid item xs={3}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={claimTokens}>
-                                    DEPOSIT EXTRACTOR
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={depositExtractors}>
+                                    Deposit
                                 </Button>
                             </Grid>
                             <Grid item xs={3}>
-                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={claimTokens}>
-                                    WITHDRAW EXTRACTOR
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={withdrawExtractors}>
+                                    Withdraw
                                 </Button>
                             </Grid>
                         </Grid>
