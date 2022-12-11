@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'mui-image';
+import TextField from '@mui/material/TextField';
 
 import peExt from './images/temp_extractor.png';
-import { Grid, Paper } from '@mui/material';
+import { Divider, Grid, Paper } from '@mui/material';
 import { Box } from '@mui/system';
 import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
 
@@ -36,12 +37,12 @@ function ExtractorSection(props) {
     // Call claim function
     function claimTokens() {
         extractorLogicWritable.claimTokens()
-        .then(_claimedTokens => {
-            console.log("Claimed %d tokens", _claimedTokens);
-        })
-        .catch(error => {
-            console.log(error);
-        });
+            .then(_claimedTokens => {
+                console.log("Claimed %d tokens", _claimedTokens);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     // ---------- external parameters
@@ -111,7 +112,7 @@ function ExtractorSection(props) {
                 });
 
             // Retrieve blocks before next claim
-            
+
             //
 
 
@@ -170,8 +171,26 @@ function ExtractorSection(props) {
                             Extractors in staking: {stakedExtractors}
                         </Typography>
 
+                        <Divider />
 
-                        <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth>
+                        <Grid container spacing={1} >
+                            <Grid item xs={3}>
+                                <TextField required id="outlined-required" label="Extractors number" defaultValue="0" className="textFieldCustom"  />
+                            </Grid>
+                            <Grid item xs={3}>
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='medium' fullWidth onClick={claimTokens}>
+                                    DEPOSIT EXTRACTOR
+                                </Button>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <Button sx={{ backgroundColor: '#a1c126', ml: 1, borderRadius: 2 }} variant="contained" size='medium' fullWidth onClick={claimTokens}>
+                                    WITHDRAW EXTRACTOR
+                                </Button>
+                            </Grid>
+                            <Grid item xs={3}>
+                            </Grid>
+                        </Grid>
+                        <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 3, borderRadius: 2 }} variant="contained" size="large" fullWidth>
                             Buy new Extractor
                         </Button>
                     </Box>
