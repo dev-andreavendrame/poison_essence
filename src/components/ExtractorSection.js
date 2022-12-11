@@ -62,23 +62,23 @@ function ExtractorSection(props) {
     const depositExtractors = () => {
         const extractorsToManage = parseInt(message);
         extractorLogicWritable.depositExtractors(extractorsToManage)
-        .then(() => {
-            console.log("Depositing %d extractors...", extractorsToManage)
-        })
-        .catch(error => {
-            console.log(error);
-        });
+            .then(() => {
+                console.log("Depositing %d extractors...", extractorsToManage)
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
 
     const withdrawExtractors = () => {
         const extractorsToManage = parseInt(message);
         extractorLogicWritable.withdrawExtractors(extractorsToManage)
-        .then(() => {
-            console.log("Withdrawing %d extractors...", extractorsToManage)
-        })
-        .catch(error => {
-            console.log(error);
-        });
+            .then(() => {
+                console.log("Withdrawing %d extractors...", extractorsToManage)
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
 
@@ -233,10 +233,11 @@ function ExtractorSection(props) {
                             </Grid>
                         </Grid>
 
-
-                        <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth>
-                            Buy new Extractor
-                        </Button>
+                        <a href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/105358272762175259458146981548426915326652569204453104744298191896506852704456" rel="noreferrer">
+                            <Button sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size="large" fullWidth>
+                                Buy new Extractor
+                            </Button>
+                        </a>
                     </Box>
                 </Grid>
             </Grid>
