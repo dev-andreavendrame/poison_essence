@@ -146,7 +146,7 @@ function App() {
               </MButton>
             </Box>
             <Box >
-              <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2, maxWidth: '180px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={approveExtractorsManagement}>
+              <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2, maxWidth: '200px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={approveExtractorsManagement}>
                 Approve&nbsp;Extractors management
               </MButton>
             </Box>
