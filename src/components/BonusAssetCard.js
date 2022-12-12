@@ -11,6 +11,9 @@ import { Grid } from '@mui/material';
 
 function BonusAssetCard(props) {
 
+
+    // Change Button className to 'buttonGreen' when 'disabled == false'
+
     return (
 
 
@@ -26,6 +29,7 @@ function BonusAssetCard(props) {
                     </Typography>
                 </Box>
             </CardContent>
+
             <CardActions>
                 <Grid sx={{ pb: 2, pl: 2, pr: 2 }} container spacing={1}>
                     <Grid item xs={4}>
@@ -41,7 +45,6 @@ function BonusAssetCard(props) {
                         </Box>
                     </Grid>
                 </Grid>
-
             </CardActions>
         </Card>
     );

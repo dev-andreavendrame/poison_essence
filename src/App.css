@@ -80,7 +80,33 @@
 
 }
 
-
 .textFieldCustom {
   border-color: white;
+}
+
+.appLogo {
+  background-image: url("./components/images/frog_logo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.buttonGreen {
+  background-color: #a1c126 !important; 
+}
+.buttonGreen:hover {
+  background-color: #7d961d !important; 
+  filter: brightness( 90% );
+}
+
+.buttonDark {
+  background-color: #303030 !important; 
+  color: '#a1c126' !important;
+  border: 3 !important;
+  border-color: '#a1c126' !important;
+}
+.buttonDark:hover {
+  background-color: #555555 !important; 
+
+  filter: brightness( 110% );
 }
