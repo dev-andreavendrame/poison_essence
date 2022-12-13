@@ -15,6 +15,7 @@ import peLegs from './images/pe_legs.jpg';
 import peChest from './images/pe_chest.jpg';
 import peStingShield from './images/pe_shield_sting.jpg';
 import peSnakeSword from './images/pe_snake_sword.jpg';
+import { Shield } from '@mui/icons-material';
 
 // <-- equipment end
 
@@ -61,36 +62,43 @@ export const BONUS_EQUIPMENTS = [
         id: 0,
         name: "Ancient Toxic Helmet",
         part: "Head",
-        cost: 2500
+        cost: 2500,
+        image: peHelmet
     },
     {
         id: 1,
         name: "Ancient Toxic Chest",
         part: "Chest",
-        cost: 2500
+        cost: 2500,
+        image: peChest
     },
     {
         id: 2,
         name: "Ancient Toxic Gloves",
         part: "Arms",
-        cost: 2000
+        cost: 2000,
+        image: peArms
     },
     {
         id: 3,
         name: "Ancient Toxic Boots",
         part: "Legs",
-        cost: 2000
+        cost: 2000,
+        image: peLegs
     },
     {
         id: 4,
         name: "Sting Shield",
         part: "Shield",
-        cost: 1000
+        cost: 1000,
+        image: peStingShield
     },
     {
         id: 5,
         name: "Snake Sword",
         part: "Sword",
-        cost: 600
+        cost: 600,
+        image: peSnakeSword
+
     }
 ];
