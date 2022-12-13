@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import MButton from '@mui/material/Button';
 import './App.css';
 import BonusAssetCard from './components/BonusAssetCard';
-import { BONUS_ASSETS } from './components/BonusAssetsData';
+import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './components/BonusAssetsData';
 import ExtractorSection from './components/ExtractorSection';
 import { extractorLogicWritable, extractorTokenWritable, peTokenReadable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
-import { AppBar, Grid, Icon, IconButton, Typography, Container } from '@mui/material';
+import { AppBar, Grid, Icon, IconButton, Typography, Container, Divider } from '@mui/material';
 import Box from '@mui/material/Box';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import peLogo from './components/images/frog_logo.png';
@@ -131,7 +131,7 @@ function App() {
               <img src={peLogo} alt="Poison Essence logo" class="img-fluid" />
             </Box>
             <Box >
-              <Typography sx={{ ml: 2, mb: 3, fontWeight: 'bold', fontSize: 'clamp(26px, 4vw, 36px)', textAlign: 'left' }} variant='h4' >
+              <Typography sx={{ ml: 2, mb: 3, fontWeight: 'bold', fontSize: 'clamp(26px, 4vw, 46px)', textAlign: 'left' }} variant='h4' >
                 Poison Essence
               </Typography>
             </Box>
@@ -163,9 +163,43 @@ function App() {
             <ExtractorSection
               address={currentAccount} />
           </div>
-          <Grid container spacing={2} direction="row" display="flex" justifyContent="flex-start" alignItems="flex-start" sx={{ mt: 5 }}>
+
+
+
+          <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 2, pb: 2, pl: 3, pr: 5, mt: 5, mb: 2, }} >
+            <Typography variant='h2' noWrap='true' sx={{ ml: 1, fontWeight: 'bold', fontSize: 'clamp(36px, 4vw, 56px)', textAlign: 'left', color: 'white', textShadow: ' 1px 2px 10px #303030' }}>
+              Assets collection 
+            </Typography>
+          </Box>
+
+
+          <Grid container spacing={2} direction="row" justifyContent="center" alignItems="flex-start" >
             {
               BONUS_ASSETS.map((info) => {
+                return (
+                  <BonusAssetCard
+                    key={info['id']}
+                    name={info['name']}
+                    cost={info['cost']}
+                    assetImage={info['image']}
+                  />);
+              }
+              )
+            }
+          </Grid>
+
+
+          <Box sx={{ height: 50 }} />
+          <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 2, pb: 2, pl: 3, pr: 5, mt: 5, mb: 2 }} >
+            <Typography variant='h2' noWrap='true' sx={{ ml: 1, fontWeight: 'bold', fontSize: 'clamp(36px, 4vw, 56px)', textAlign: 'left', color: 'white', textShadow: '1px 2px 10px #303030' }}>
+              Equipment collection 
+            </Typography>
+          </Box>
+
+
+          <Grid container spacing={2} direction="row" justifyContent="center" alignItems="flex-start" >
+            {
+              BONUS_EQUIPMENTS.map((info) => {
                 return (
                   <BonusAssetCard
                     key={info['id']}
