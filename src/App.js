@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
-import MButton from '@mui/material/Button';
 import './App.css';
+
 import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './components/BonusAssetsData';
 import ExtractorSection from './components/ExtractorSection';
 import { extractorLogicWritable, extractorTokenWritable, peTokenReadable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
 import { AppBar, Grid, Icon, IconButton, Typography, Container, Divider } from '@mui/material';
+
 import Box from '@mui/material/Box';
 import RefreshIcon from '@mui/icons-material/Refresh';
+
+import BonusAssetCard from './components/BonusAssetCard';
+import ExtractorSection from './components/ExtractorSection';
+import PageFooter from './components/PageFooter';
+
 import peLogo from './components/images/frog_logo.png';
-import Image from 'mui-image';
 
 
 function App() {
@@ -122,7 +127,7 @@ function App() {
   // Interface definition
 
   return (
-    <div className="App" class="pb-5 bg" >
+    <div className="App" class="bg" >
       <AppBar position="static" sx={{ height: 130, backgroundColor: "#551b8c", boxShadow: 24 }}>
 
         <Box display="inline-flex" alignItems="center" justifyContent="space-between" sx={{ height: 100, mt: 3 }} >
@@ -155,15 +160,17 @@ function App() {
             </Box>
           </Box>
         </Box>
-
       </AppBar>
+
+
+
       <div>
-        <div class="mt-5 container">
+        <Box  justifyContent='center' sx={{ mt: 5, mr:4, ml: 4 }}>
+
           <div class="row align-items-center" >
-            <ExtractorSection
+            <ExtractorSection 
               address={currentAccount} />
           </div>
-
 
 
           <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 2, pb: 2, pl: 3, pr: 5, mt: 5, mb: 2, }} >
@@ -187,7 +194,6 @@ function App() {
               )
             }
           </Grid>
-
 
           <Box sx={{ height: 50 }} />
           <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 2, pb: 2, pl: 3, pr: 5, mt: 5, mb: 2 }} >
@@ -213,6 +219,10 @@ function App() {
           </Grid>
         </div>
       </div>
+
+
+      <PageFooter />
+
     </div >
   );
 } export default App;

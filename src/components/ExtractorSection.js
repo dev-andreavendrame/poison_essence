@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+
+import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
+
 import Image from 'mui-image';
-import TextField from '@mui/material/TextField';
+import { Grid, Paper, Box, Button, Typography, TextField } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 import peExt from './images/temp_extractor.png';
 import peExtbw from './images/extractor_bw.png';
-import { Divider, Grid, Paper } from '@mui/material';
-import { Box } from '@mui/system';
-import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
 
 
 function ExtractorSection(props) {
@@ -172,7 +171,7 @@ function ExtractorSection(props) {
                 </Grid>
                 <Grid item xs={6}>
                     <Box className='extDataBox' p={1} sx={{ borderRadius: 8, mb: 10, p: 3 }} >
-                        <Typography sx={{ ml: 1, mb: 1, color: 'white', fontWeight: 'bold' }} variant='h4'>
+                        <Typography sx={{ ml: 1, mb: 1, color: 'white', fontWeight: 'bold', textShadow: ' 1px 2px 8px #303030' }} variant='h4'>
                             PE Tokens management
                         </Typography>
                         <Typography sx={{ ml: 1, color: 'white', fontWeight: 'light' }} variant='h6'>
@@ -202,7 +201,7 @@ function ExtractorSection(props) {
                     </Box>
 
                     <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 3, pb: 3, pl: 3, pr: 5 }} >
-                        <Typography sx={{ ml: 1, mb: 1, color: 'white', fontWeight: 'bold' }} variant='h4'>
+                        <Typography sx={{ ml: 1, mb: 1, color: 'white', fontWeight: 'bold', textShadow: ' 1px 2px 8px #303030' }} variant='h4'>
                             Extractors management
                         </Typography>
                         <Typography sx={{ ml: 1, color: 'white', fontWeight: 'light' }} variant='h6'>
@@ -218,13 +217,13 @@ function ExtractorSection(props) {
                         <Grid container spacing={1} >
                             <Grid item xs={5}>
                                 <TextField
+                                    inputProps={{ style: { color: 'white' } }}
                                     required
                                     id="message"
                                     name="message"
                                     onChange={handleChange}
-                                    label="Extractors number"
-                                    defaultValue="0"
-                                    className="textFieldCustom" />
+                                    label="Extractors number" 
+                                    />
                             </Grid>
                             <Grid item xs={3}>
                                 <Button className="buttonGreen" sx={{ ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={depositExtractors}>

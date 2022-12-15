@@ -80,10 +80,6 @@
 
 }
 
-.textFieldCustom {
-  border-color: white;
-}
-
 .appLogo {
   background-image: url("./components/images/frog_logo.png");
   background-size: cover;
@@ -92,21 +88,84 @@
 
 
 .buttonGreen {
-  background-color: #a1c126 !important; 
+  background-color: #a1c126 !important;
 }
+
 .buttonGreen:hover {
-  background-color: #7d961d !important; 
-  filter: brightness( 90% );
+  background-color: #7d961d !important;
+  filter: brightness(90%);
 }
 
 .buttonDark {
-  background-color: #303030 !important; 
+  background-color: #303030 !important;
   color: '#a1c126' !important;
   border: 3 !important;
   border-color: '#a1c126' !important;
 }
-.buttonDark:hover {
-  background-color: #555555 !important; 
 
-  filter: brightness( 110% );
+.buttonDark:hover {
+  background-color: #555555 !important;
+
+  filter: brightness(110%);
+}
+
+
+
+
+.icons {
+  display: flex;
+  column-gap: 25px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 50%;
+  outline: 2px solid #fff;
+  transition-property: outline-offset, outline-color, background-color;
+  transition-duration: .25s;
+}
+
+.icon:hover {
+  outline-offset: 4px;
+}
+
+.icon:hover {
+  animation: shake .25s;
+}
+
+.icon--instagram:hover {
+  color: white;
+  background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #2854eb 90%);
+  outline-color: #a02d76;
+}
+
+.icon--twitter:hover {
+  background-color: #1da1f2;
+  outline-color: #1da1f2;
+}
+
+.icon--srs:hover {
+  color: white;
+  background-image: radial-gradient(circle at 50% 50%, #74caff 15%, #4db5f5 40%, #2892d4 60%, #007bc7 100% );
+  outline-color: #007bc7;
+}
+
+.icon--gitbook:hover {
+  color: white;
+  background-image: radial-gradient(circle at 0% 0%, #d7eb86 15%, #a1c126 40%, #7c9710 60%, #3f4d07 90% );
+  outline-color: #a1c126;
+}
+
+@keyframes shake {
+  10%{transform: rotate(15deg);}
+  20%{transform: rotate(-15deg);}
+  30%{transform: rotate(15deg);}
+  40%{transform: rotate(-15deg);}
 }
