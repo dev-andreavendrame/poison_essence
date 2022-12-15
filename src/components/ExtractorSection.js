@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
+import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
 
 import Image from 'mui-image';
 import { Grid, Paper, Box, Button, Typography, TextField } from '@mui/material';
-import { styled } from '@mui/material/styles';
 
 import peExt from './images/temp_extractor.png';
 import peExtbw from './images/extractor_bw.png';

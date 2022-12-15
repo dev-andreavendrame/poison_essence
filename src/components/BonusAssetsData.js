@@ -15,7 +15,6 @@ import peLegs from './images/pe_legs.jpg';
 import peChest from './images/pe_chest.jpg';
 import peStingShield from './images/pe_shield_sting.jpg';
 import peSnakeSword from './images/pe_snake_sword.jpg';
-import { Shield } from '@mui/icons-material';
 
 // <-- equipment end
 

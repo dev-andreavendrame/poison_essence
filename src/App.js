@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './components/BonusAssetsData';
-import { extractorLogicWritable, extractorTokenWritable, peTokenReadable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
+import { extractorLogicWritable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
 import { AppBar, Grid, Typography } from '@mui/material';
 import MButton from '@mui/material/Button';
 
@@ -216,7 +216,7 @@ function App() {
               )
             }
           </Grid>
-        </Box>
+        </div>
       </div>
 
 

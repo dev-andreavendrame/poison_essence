@@ -25,5 +25,4 @@ yarn-error.log*
 /src/components/build
 
 # Custom
-./package-lock.json
 package-lock.json

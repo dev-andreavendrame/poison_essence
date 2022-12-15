@@ -1,9 +1,8 @@
-import { BottomNavigation, SvgIcon, Box, Typography, Grid } from '@mui/material';
+import { BottomNavigation, SvgIcon, Typography, Grid } from '@mui/material';
 
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 function PageFooter(props) {
