@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
+import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './components/BonusAssetsData';
+import ExtractorSection from './components/ExtractorSection';
 import { extractorLogicWritable, extractorTokenWritable, peTokenReadable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
+import { AppBar, Grid, Icon, IconButton, Typography, Container, Divider } from '@mui/material';
 
-import MButton from '@mui/material/Button';
-import { AppBar, Grid, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import RefreshIcon from '@mui/icons-material/Refresh';
-
 
 import BonusAssetCard from './components/BonusAssetCard';
 import ExtractorSection from './components/ExtractorSection';
@@ -173,15 +173,14 @@ function App() {
           </div>
 
 
-          
           <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 2, pb: 2, pl: 3, pr: 5, mt: 5, mb: 2, }} >
             <Typography variant='h2' noWrap='true' sx={{ ml: 1, fontWeight: 'bold', fontSize: 'clamp(36px, 4vw, 56px)', textAlign: 'left', color: 'white', textShadow: ' 1px 2px 10px #303030' }}>
-              Assets collection
+              Assets collection 
             </Typography>
           </Box>
 
 
-          <Grid container spacing={2} direction="row" justifyContent="center" alignItems="flex-start"  >
+          <Grid container spacing={2} direction="row" justifyContent="center" alignItems="flex-start" >
             {
               BONUS_ASSETS.map((info) => {
                 return (
@@ -195,18 +194,16 @@ function App() {
               )
             }
           </Grid>
-         
-
 
           <Box sx={{ height: 50 }} />
           <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 2, pb: 2, pl: 3, pr: 5, mt: 5, mb: 2 }} >
             <Typography variant='h2' noWrap='true' sx={{ ml: 1, fontWeight: 'bold', fontSize: 'clamp(36px, 4vw, 56px)', textAlign: 'left', color: 'white', textShadow: '1px 2px 10px #303030' }}>
-              Equipment collection
+              Equipment collection 
             </Typography>
           </Box>
 
 
-          <Grid container spacing={2} direction="row" flexGrow='true' justifyContent="center" alignItems="flex-start" >
+          <Grid container spacing={2} direction="row" justifyContent="center" alignItems="flex-start" >
             {
               BONUS_EQUIPMENTS.map((info) => {
                 return (
@@ -220,9 +217,7 @@ function App() {
               )
             }
           </Grid>
-
-        </Box>
-
+        </div>
       </div>
 
 
