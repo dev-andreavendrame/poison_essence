@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-import BonusAssetCard from './components/BonusAssetCard';
 import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './components/BonusAssetsData';
-import ExtractorSection from './components/ExtractorSection';
 import { extractorLogicWritable, extractorTokenWritable, peTokenReadable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
-import { AppBar, Grid, Icon, IconButton, Typography, Container, Divider } from '@mui/material';
+import { AppBar, Grid, Typography } from '@mui/material';
+import MButton from '@mui/material/button';
 
 import Box from '@mui/material/Box';
 import RefreshIcon from '@mui/icons-material/Refresh';
@@ -217,7 +216,7 @@ function App() {
               )
             }
           </Grid>
-        </div>
+        </Box>
       </div>
 
 
