@@ -164,17 +164,17 @@ function App() {
 
 
       <div>
-        <Box  justifyContent='center' sx={{ mt: 5, mr:4, ml: 4 }}>
+        <div class="mt-5 container">
 
           <div class="row align-items-center" >
-            <ExtractorSection 
+            <ExtractorSection
               address={currentAccount} />
           </div>
 
 
           <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 2, pb: 2, pl: 3, pr: 5, mt: 5, mb: 2, }} >
             <Typography variant='h2' noWrap='true' sx={{ ml: 1, fontWeight: 'bold', fontSize: 'clamp(36px, 4vw, 56px)', textAlign: 'left', color: 'white', textShadow: ' 1px 2px 10px #303030' }}>
-              Assets collection 
+              Assets collection
             </Typography>
           </Box>
 
@@ -197,7 +197,7 @@ function App() {
           <Box sx={{ height: 50 }} />
           <Box className='extDataBox' p={1} sx={{ borderRadius: 8, pt: 2, pb: 2, pl: 3, pr: 5, mt: 5, mb: 2 }} >
             <Typography variant='h2' noWrap='true' sx={{ ml: 1, fontWeight: 'bold', fontSize: 'clamp(36px, 4vw, 56px)', textAlign: 'left', color: 'white', textShadow: '1px 2px 10px #303030' }}>
-              Equipment collection 
+              Equipment collection
             </Typography>
           </Box>
 
