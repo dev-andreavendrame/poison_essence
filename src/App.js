@@ -168,7 +168,7 @@ function App() {
         <div class="mt-5 container">
 
           <div class="row align-items-center" >
-         
+            <DailyGiftSection/>
           </div>
 
           <div class="row align-items-center" >

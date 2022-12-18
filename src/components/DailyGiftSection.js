@@ -3,11 +3,8 @@ import { styled } from "@mui/material/styles";
 
 import { Grid, Box, Button, Typography } from '@mui/material';
 
-import peExt from './images/temp_extractor.png';
-
 function DailyGiftSection(props) {
 
-    const myImg = { peExt };
     const [flag, setFlag] = useState(true);
     const handleClick = () => {
         setFlag(!flag);
