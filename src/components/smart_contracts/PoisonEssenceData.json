@@ -1,0 +1,16 @@
+{
+    "collection_name": "Poison Essence",
+    "assets": {
+        "number": 6
+    },
+    "equipments": {
+        "number": 6
+    },
+    "token": {
+        "name": "PE",
+        "max_supply": 20000000
+    },
+    "market": {
+        "price_increment_per_day": "0.005"
+    }
+}

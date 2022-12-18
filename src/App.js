@@ -12,6 +12,7 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import BonusAssetCard from './components/BonusAssetCard';
 import ExtractorSection from './components/ExtractorSection';
 import PageFooter from './components/PageFooter';
+import DailyGiftSection from './components/DailyGiftSection';
 
 import peLogo from './components/images/frog_logo.png';
 
@@ -165,6 +166,10 @@ function App() {
 
       <div>
         <div class="mt-5 container">
+
+          <div class="row align-items-center" >
+         
+          </div>
 
           <div class="row align-items-center" >
             <ExtractorSection

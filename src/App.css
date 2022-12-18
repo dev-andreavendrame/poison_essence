@@ -77,7 +77,13 @@
   backdrop-filter: blur(20px);
   background-color: rgba(85, 27, 140, 0.5);
   box-shadow: 10px 10px 10px rgba(30, 30, 30, 0.5);
+}
 
+.bonusBannerBox {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(20px);
+  background-color: rgba(106, 64, 145, 0.8);
+  box-shadow: 10px 10px 10px rgba(30, 30, 30, 0.5);
 }
 
 .appLogo {
@@ -168,4 +174,61 @@
   20%{transform: rotate(-15deg);}
   30%{transform: rotate(15deg);}
   40%{transform: rotate(-15deg);}
+}
+
+
+
+
+
+
+.giftIcon {
+  width: 200px;
+  height: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 50px;
+
+  border-radius: 50%;
+  border: '4px solid rgb(255, 0, 0)';
+  transition-property: outline-offset, outline-color;
+  transition-duration: 1s;
+
+  background-image: url('./components/images/GiftBox.png');
+  background-size: cover;
+}
+.giftIcon:hover {
+  outline-offset: 12px;
+  animation: lightup 1s; 
+  animation-fill-mode: forwards;
+}
+.giftIcon--open{
+  width: 200px;
+  height: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 50px;
+  background-image: url('./components/images/pe_chest.jpg');
+  background-size: cover;
+}
+
+@keyframes lightup {
+  10%{filter: brightness(105%);}
+  20%{filter: brightness(110%);
+      outline-width: 6px;
+      outline-color: #00a2ff;}
+  30%{filter: brightness(115%);}
+  40%{filter: brightness(120%);}
+  60%{filter: brightness(125%);
+      outline-width: 7px;
+      outline-color: #6ac8ff;}
+  80%{filter: brightness(130%);
+      outline-width: 8px;
+      outline-color: #aae0ff;}
+  100%{filter: brightness(130%);
+      outline-width: 8px;
+      outline-color: #ffffff;}
 }

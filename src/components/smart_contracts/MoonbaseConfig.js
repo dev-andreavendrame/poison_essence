@@ -6,6 +6,7 @@ import PoisonEssenceExtractorLogic from './ABI/PoisonEssenceExtractor.json';
 export const PLACEHOLDER_EXTRACTOR_ADDRESS = "0xB7CC731b4fbE236D3b8dCBcFaF166E7d7726d0a1";
 export const TEST_TOKEN_ADDRESS = "0xf21dACf7CF1149917418f886590A1C1CAc535A0D";
 export const TEST_EXTRACTOR_LOGIC_ADDRESS = "0x3902c23163Ce790AFB6F53f3DfA56d5731354AE4";
+export const TEST_GIFT_BOX_LOGIC = "0x1deCcFE63D4536d12B1F41Af1846A256F6a3b229";
 
 // Smart Contract ABIs
 const PE_TOKEN_ABI = PoisonEssenceToken['abi'];
