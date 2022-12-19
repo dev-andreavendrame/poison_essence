@@ -168,7 +168,8 @@ function App() {
         <div class="mt-5 container">
 
           <div class="row align-items-center" >
-            <DailyGiftSection/>
+            <DailyGiftSection
+              address={currentAccount} />
           </div>
 
           <div class="row align-items-center" >

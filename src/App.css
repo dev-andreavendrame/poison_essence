@@ -194,6 +194,18 @@
 
 }
 
+.giftButton {
+  background-color: #aae0ff !important;
+  color: #00a2ff !important;
+  transition-property: outline-offset, outline-color;
+  transition-duration: .5s;
+}
+.giftButton:hover {
+  outline-offset: 6px;
+  animation: lightup-small 0.5s; 
+  animation-fill-mode: forwards;
+}
+
 
 .giftIcon {
   width: 200px;
@@ -229,6 +241,15 @@
   background-size: cover;
 }
 
+.bonusBannerBox {
+  background-image: linear-gradient(160deg, rgba(221, 221, 221, 0.25), rgba(119, 49, 49, 0.5));
+  backdrop-filter: blur(10px);
+  background-color: rgba(119, 49, 49, 0.5);
+  box-shadow: 10px 10px 10px rgba(30, 30, 30, 0.5);
+}
+
+
+
 @keyframes lightup {
   10%{filter: brightness(105%);}
   20%{filter: brightness(110%);
@@ -244,5 +265,14 @@
       outline-color: #aae0ff;}
   100%{filter: brightness(130%);
       outline-width: 8px;
+      outline-color: #ffffff;}
+}
+
+@keyframes lightup-small {
+  20%{outline-color: #00a2ff;}
+  60%{outline-width: 5px;
+      outline-color: #6ac8ff;} 
+  80%{outline-color: #aae0ff;}
+  100%{outline-width: 6px;
       outline-color: #ffffff;}
 }
