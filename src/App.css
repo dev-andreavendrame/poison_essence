@@ -176,9 +176,23 @@
   40%{transform: rotate(-15deg);}
 }
 
+.giftNotReadyIcon {
 
+  width: 200px;
+  height: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 50px;
 
+  border-radius: 50%;
+  border: '4px solid rgb(255, 0, 0)';
 
+  background-image: url('./components/images/GiftBox_not_ready.png');
+  background-size: cover;
+
+}
 
 
 .giftIcon {
@@ -211,7 +225,7 @@
   justify-content: center;
   text-decoration: none;
   font-size: 50px;
-  background-image: url('./components/images/pe_chest.jpg');
+  background-image: url('./components/images/Ranger_with_pe.png');
   background-size: cover;
 }
 
