@@ -12,7 +12,25 @@ function DailyGiftSection(props) {
     const GIFT_BOX_REVEALED = 2;
 
     const [giftBoxState, setGiftBoxState] = useState(GIFT_BOX_NOT_READY);
+    const [accountInitialized, setAccountInitialized] = useState(false);
 
+
+    // START --- Update section state -->
+    giftBoxLogicWritable.isInitialized()
+        .then(_isInit => {
+            setAccountInitialized(_isInit);
+        }
+        );
+
+    giftBoxLogicWritable.canUserClaimBox()
+    .then(_userCanClaim => {
+        if (_userCanClaim) {
+            setGiftBoxState(GIFT_BOX_READY);
+        }
+    });
+
+    // <-- END --- Update section state
+    
     const handleClick = async () => {
         if (giftBoxState !== GIFT_BOX_READY) {
             giftBoxLogicWritable.canUserClaimBox()
@@ -46,6 +64,26 @@ function DailyGiftSection(props) {
         transition: 'outline-offset 1s, outline-color 1s'
     });
 
+    const initializeChristmasJourney = () => {
+        const USER_WALLET = props.address;
+        giftBoxLogicWritable.inizializeAccountClaim(USER_WALLET).
+            then(_isInit => {
+                setAccountInitialized(_isInit);
+                console.log("Account is initialized to claim boxes");
+            }).catch(error => {
+                console.log("Account initialization error...");
+                console.log(error);
+            })
+    }
+
+    function getGiftingInitializationButton() {
+        if (!accountInitialized) {
+            return (
+                <Button onClick={initializeChristmasJourney}>Start Christmas journey!</Button>
+            );
+        }
+    }
+
     function loadGiftState() {
 
         if (giftBoxState === GIFT_BOX_READY) {
@@ -77,6 +115,7 @@ function DailyGiftSection(props) {
                         </Typography>
                     </Box>
                 </Grid>
+                {getGiftingInitializationButton()}
 
             </Grid>
         </Box>
