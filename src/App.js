@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './components/BonusAssetsData';
-import { extractorLogicWritable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
+import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
 import { AppBar, Grid, Typography } from '@mui/material';
 import MButton from '@mui/material/Button';
 
@@ -123,6 +123,46 @@ function App() {
     setRefreshIndex(refreshIndex + 1);
   }
 
+  function showInitializeButton() {
+    extractorLogicReadable.lastInteraction()
+      .then((lastInteraction) => {
+        console.log("Ultima interazione: " + lastInteraction);
+        return (
+          <Box />
+        );
+      }).catch(error => {
+        console.log("Ultima interazione errore");
+        console.log(error);
+        return (
+          <Box >
+            <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', borderRadius: 2, maxWidth: '100px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={initializeAccount}>
+              Initialize account
+            </MButton>
+          </Box>
+        );
+      });
+  }
+
+  function showApprovalButton() {
+    extractorTokenReadable.isApprovedForAll(currentAccount, TEST_EXTRACTOR_LOGIC_ADDRESS)
+      .then((operator) => {
+        console.log("Approved operator: " + operator);
+        return (
+          <Box />
+        );
+      }).catch(error => {
+        console.log("Approved operator errore");
+        console.log(error);
+        return (
+          <Box >
+            <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2, maxWidth: '200px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={approveExtractorsManagement}>
+              Approve&nbsp;Extractors management
+            </MButton>
+          </Box>
+        );
+      });
+  }
+
 
   // Interface definition
 
@@ -145,16 +185,8 @@ function App() {
           <Box sx={{ minWidth: 50 }} />
 
           <Box display="inline-flex" sx={{ mr: 4, mb: 2, alignItems: "center", justifyContent: "flex-end", minHeight: 10 }}>
-            <Box >
-              <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', borderRadius: 2, maxWidth: '100px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={initializeAccount}>
-                Initialize account
-              </MButton>
-            </Box>
-            <Box >
-              <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2, maxWidth: '200px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={approveExtractorsManagement}>
-                Approve&nbsp;Extractors management
-              </MButton>
-            </Box>
+            {showInitializeButton()}
+            {showApprovalButton()}
             <Box >
               {updateConnectedWallet()}
             </Box>
