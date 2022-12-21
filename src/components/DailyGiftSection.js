@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { styled } from "@mui/material/styles";
 
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, Modal } from '@mui/material';
 
 import { giftBoxLogicWritable } from './smart_contracts/MoonbaseConfig';
+import { ethers } from 'ethers';
+import PopupToken from './PopupToken';
 
 function DailyGiftSection(props) {
 
@@ -13,6 +15,11 @@ function DailyGiftSection(props) {
 
     const [giftBoxState, setGiftBoxState] = useState(GIFT_BOX_NOT_READY);
     const [accountInitialized, setAccountInitialized] = useState(false);
+
+    const [open, setOpen] = useState(false);
+    const handleClose = () => setOpen(false);
+    const handleOpen = () => setOpen(true);
+    const [popupTokens, setPopupTokens] = useState(0);
 
 
     // START --- Update section state -->
@@ -52,6 +59,17 @@ function DailyGiftSection(props) {
                 .then(reward => {
                     console.log("Claimed %d PE tokens", reward);
                     setGiftBoxState(GIFT_BOX_REVEALED);
+                    giftBoxLogicWritable.on("BoxOpened", (_from, _amount, _event) => {
+                        let eventInfo = {
+                            from: _from,
+                            amount: _amount
+                        };
+                        setPopupTokens(ethers.utils.formatEther(eventInfo['amount']));
+                        console.log("Amount of PE gained: %d from %s", eventInfo['amount'], eventInfo['from']);
+                        handleOpen();
+
+                    });
+                    console.log("Gift box state: GIFT_BOX_REVEALED");
                 }).catch(error => {
                     console.log(error);
                 })
@@ -92,16 +110,27 @@ function DailyGiftSection(props) {
 
         if (giftBoxState === GIFT_BOX_READY) {
             return 'giftIcon';
-        } else if (giftBoxState === 1) {
+        } else if (giftBoxState === GIFT_BOX_NOT_READY) {
             return 'giftNotReadyIcon';
         } else {
             // giftBoxState == GIFT_BOX_REVEALED
-            return 'giftIcon--open';
+            return 'giftNotReadyIcon';
         }
     }
 
     return (
         <Box>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                style={{ backdropFilter: "blur(3px)" }}
+            >
+                <PopupToken
+                    reward_tokens={popupTokens} />
+            </Modal>
+
             <Box display='flex' justifyContent='center' alignItems='center' sx={{ mb: 5 }}>
                 <Box sx={{ minWidth: 200 }}>
                     <BonusButton className={loadGiftState()} onClick={handleClick} />
@@ -122,7 +151,6 @@ function DailyGiftSection(props) {
                         <strong>Remember to return tomorrow:</strong> the holiday gifts will be available daily for the rest of 2022!
                     </Typography>
                 </Box>
-
             </Box>
         </Box>
     );
