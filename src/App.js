@@ -124,6 +124,13 @@ function App() {
   }
 
   function showInitializeButton() {
+    return (
+      <Box >
+        <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', borderRadius: 2, maxWidth: '100px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={initializeAccount}>
+          Initialize account
+        </MButton>
+      </Box>
+    );
     extractorLogicReadable.lastInteraction()
       .then((lastInteraction) => {
         console.log("Ultima interazione: " + lastInteraction);
@@ -144,12 +151,25 @@ function App() {
   }
 
   function showApprovalButton() {
+    return (
+      <Box >
+        <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2, maxWidth: '200px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={approveExtractorsManagement}>
+          Approve&nbsp;Extractors management
+        </MButton>
+      </Box>
+    );
     extractorTokenReadable.isApprovedForAll(currentAccount, TEST_EXTRACTOR_LOGIC_ADDRESS)
-      .then((operator) => {
-        console.log("Approved operator: " + operator);
-        return (
-          <Box />
-        );
+      .then((operatorApproved) => {
+        console.log("Approved operator: " + operatorApproved);
+        if (!operatorApproved) {
+          return (
+            <Box >
+              <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2, maxWidth: '200px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={approveExtractorsManagement}>
+                Approve&nbsp;Extractors management
+              </MButton>
+            </Box>
+          );
+        }
       }).catch(error => {
         console.log("Approved operator errore");
         console.log(error);
