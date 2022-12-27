@@ -269,3 +269,11 @@
   100%{outline-width: 6px;
       outline-color: #ffffff;}
 }
+
+.assetCard {
+  transition: all .2s ease-in-out;
+}
+
+.assetCard:hover {
+  transform: scale(1.1);
+}
