@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Image from 'mui-image';
 
 import { Grid } from '@mui/material';
+import FlipCard from './FlipCard';
 
 function BonusAssetCard(props) {
 
@@ -17,12 +18,19 @@ function BonusAssetCard(props) {
     return (
 
 
-        <Card sx={{ maxWidth: "20%", borderRadius: 3, boxShadow: 24, backgroundColor: '#7f33c5', m: 3 }}>
+        <Card sx={{ borderRadius: 3, boxShadow: 24, backgroundColor: '#7f33c5' }}>
             <CardContent>
                 <Typography sx={{ mb: 1.5, fontWeight: 'bold', textAlign: 'left', fontSize: 26, color: "white" }} >
                     {props.name}
                 </Typography>
-                <Image sx={{ borderRadius: 3, boxShadow: 6 }} src={props.assetImage} alt="Asset cover" borderRadius='50%' />
+
+                <FlipCard
+                    key={props.key}
+                    name={props.name}
+                    cost={props.cost}
+                    assetImage={props.assetImage}
+                />
+
                 <Box sx={{ pl: 1, pr: 1 }}>
                     <Typography sx={{ fontSize: 20, color: "white", mt: 2 }}>
                         Price: {props.cost}
