@@ -5,6 +5,7 @@ import waterlily from './images/waterlily.jpg';
 import snail from './images/poison_snail.jpg';
 import plantivorous from './images/plantivorous.jpg';
 import wasp from './images/flower_wasp.jpg';
+import frozenSnail from './images/frozen_poison_snail.jpg';
 // <-- assets end
 
 // Equipment start -->
@@ -53,6 +54,12 @@ export const BONUS_ASSETS = [{
     name: "Flower Wasp",
     cost: 7000,
     image: wasp
+},
+{
+    id: 6,
+    name: "Frozen Poison Snail",
+    cost: 7000,
+    image: frozenSnail
 }]
     ;
 
