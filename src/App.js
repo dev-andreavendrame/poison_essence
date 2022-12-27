@@ -10,11 +10,13 @@ import Box from '@mui/material/Box';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
 import BonusAssetCard from './components/BonusAssetCard';
+import FlipCard from './components/FlipCard';
 import ExtractorSection from './components/ExtractorSection';
 import PageFooter from './components/PageFooter';
 import DailyGiftSection from './components/DailyGiftSection';
 
 import peLogo from './components/images/frog_logo.png';
+
 
 
 function App() {
@@ -184,6 +186,7 @@ function App() {
   }
 
 
+
   // Interface definition
 
   return (
@@ -237,16 +240,21 @@ function App() {
           </Box>
 
 
-          <Grid container spacing={2} direction="row" justifyContent="center" alignItems="flex-start" >
+          <Grid container spacing={5} direction="row" justifyContent="center" alignItems="flex-start" sx={{mt: 1}}>
             {
+
+              
               BONUS_ASSETS.map((info) => {
                 return (
-                  <BonusAssetCard
-                    key={info['id']}
-                    name={info['name']}
-                    cost={info['cost']}
-                    assetImage={info['image']}
-                  />);
+                  <Grid item xs='auto'>
+                    <BonusAssetCard
+                      key={info['id']}
+                      name={info['name']}
+                      cost={info['cost']}
+                      assetImage={info['image']}
+                    />
+                  </Grid>
+                );
               }
               )
             }
