@@ -20,7 +20,7 @@ function BonusAssetCard(props) {
 
         <Card sx={{ borderRadius: 3, boxShadow: 24, backgroundColor: '#7f33c5' }}>
             <CardContent>
-                <Typography sx={{ mb: 1.5, fontWeight: 'bold', textAlign: 'left', fontSize: 26, color: "white" }} >
+                <Typography sx={{ mb: 1.5, fontWeight: 'bold', textAlign: 'left',  color: "white" }} variant='h6' >
                     {props.name}
                 </Typography>
 

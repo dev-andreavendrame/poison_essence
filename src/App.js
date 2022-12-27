@@ -240,19 +240,21 @@ function App() {
           </Box>
 
 
-          <Grid container spacing={5} direction="row" justifyContent="center" alignItems="flex-start" sx={{mt: 1}}>
+          <Grid container spacing={5} direction="row" justifyContent="center" alignItems="flex-start" sx={{ mt: 1, mb: 1 }}>
             {
 
-              
+
               BONUS_ASSETS.map((info) => {
                 return (
                   <Grid item xs='auto'>
-                    <BonusAssetCard
-                      key={info['id']}
-                      name={info['name']}
-                      cost={info['cost']}
-                      assetImage={info['image']}
-                    />
+                    <Box className="assetCard">
+                      <BonusAssetCard
+                        key={info['id']}
+                        name={info['name']}
+                        cost={info['cost']}
+                        assetImage={info['image']}
+                      />
+                    </Box>
                   </Grid>
                 );
               }
@@ -268,16 +270,21 @@ function App() {
           </Box>
 
 
-          <Grid container spacing={2} direction="row" justifyContent="center" alignItems="flex-start" >
+          <Grid container spacing={5} direction="row" justifyContent="center" alignItems="flex-start"  sx={{ mt: 1 }}>
             {
               BONUS_EQUIPMENTS.map((info) => {
                 return (
-                  <BonusAssetCard
-                    key={info['id']}
-                    name={info['name']}
-                    cost={info['cost']}
-                    assetImage={info['image']}
-                  />);
+                  <Grid item xs='auto'>
+                    <Box className="assetCard">
+                      <BonusAssetCard
+                        key={info['id']}
+                        name={info['name']}
+                        cost={info['cost']}
+                        assetImage={info['image']}
+                      />
+                    </Box>
+                  </Grid>
+                );
               }
               )
             }
