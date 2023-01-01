@@ -223,11 +223,6 @@ function App() {
         <div class="mt-5 container">
 
           <div class="row align-items-center" >
-            <DailyGiftSection
-              address={currentAccount} />
-          </div>
-
-          <div class="row align-items-center" >
             <ExtractorSection
               address={currentAccount} />
           </div>
