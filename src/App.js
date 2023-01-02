@@ -10,12 +10,12 @@ import Box from '@mui/material/Box';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
 import BonusAssetCard from './components/BonusAssetCard';
-import FlipCard from './components/FlipCard';
 import ExtractorSection from './components/ExtractorSection';
 import PageFooter from './components/PageFooter';
 import DailyGiftSection from './components/DailyGiftSection';
 
 import peLogo from './components/images/frog_logo.png';
+import AssetSalePopup from './components/AssetSalePopup';
 
 
 
@@ -169,11 +169,6 @@ function App() {
 
       <div>
         <div class="mt-5 container">
-
-          <div class="row align-items-center" >
-            <DailyGiftSection
-              address={currentAccount} />
-          </div>
 
           <div class="row align-items-center" >
             <ExtractorSection
