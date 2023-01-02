@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
+// Logic
 import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './components/BonusAssetsData';
 import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
-import { AppBar, Grid, Typography } from '@mui/material';
-import MButton from '@mui/material/Button';
 
+// External components
 import Box from '@mui/material/Box';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import MButton from '@mui/material/Button';
+import { AppBar, Grid, Typography } from '@mui/material';
 
+// Custom components
 import BonusAssetCard from './components/BonusAssetCard';
-import FlipCard from './components/FlipCard';
 import ExtractorSection from './components/ExtractorSection';
 import PageFooter from './components/PageFooter';
-import DailyGiftSection from './components/DailyGiftSection';
 
+// Other imports
 import peLogo from './components/images/frog_logo.png';
 
 
@@ -248,6 +250,8 @@ function App() {
                         name={info['name']}
                         cost={info['cost']}
                         assetImage={info['image']}
+                        internalId={info['internalId']}
+                        tokenId={info['tokenId']}
                       />
                     </Box>
                   </Grid>

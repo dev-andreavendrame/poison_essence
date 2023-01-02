@@ -2,19 +2,21 @@ import PoisonEssenceToken from './ABI/PoisonEssenceToken.json';
 import PoisonExtractorToken from './ABI/PlaceholderExtractor.json';
 import PoisonEssenceExtractorLogic from './ABI/PoisonEssenceExtractor.json';
 import GiftBoxLogic from './ABI/PoisonGiftBox.json';
+import AssetMarketLogic from './ABI/PoisonEssenceAssets.json';
 
 // Smart Contract addresses
 export const PLACEHOLDER_EXTRACTOR_ADDRESS = "0xB7CC731b4fbE236D3b8dCBcFaF166E7d7726d0a1";
 export const TEST_TOKEN_ADDRESS = "0xf21dACf7CF1149917418f886590A1C1CAc535A0D";
 export const TEST_EXTRACTOR_LOGIC_ADDRESS = "0x3902c23163Ce790AFB6F53f3DfA56d5731354AE4";
 export const TEST_GIFT_BOX_LOGIC = "0x5436b1b1Bea69676f48Ed47DD9D282f5315544dD";
-
+export const TEST_ASSET_MARKET_ADDRESS = "0x4B30bea34ea83274F4a7edD2Ebd78012b4AcFEA1";
 
 // Smart Contract ABIs
 const PE_TOKEN_ABI = PoisonEssenceToken['abi'];
 const EXTRACTOR_TOKEN_ABI = PoisonExtractorToken['abi'];
 const EXTRACTOR_LOGIC_ABI = PoisonEssenceExtractorLogic['abi'];
 const GIFT_BOX_LOGIC_ABI = GiftBoxLogic['abi'];
+const ASSET_MARKET_ABI = AssetMarketLogic['abi'];
 
 
 // 1. Import ethers
@@ -59,3 +61,7 @@ export const extractorLogicWritable = new ethers.Contract(TEST_EXTRACTOR_LOGIC_A
 // Gift box logic
 export const giftBoxLogicReadable = new ethers.Contract(TEST_GIFT_BOX_LOGIC, GIFT_BOX_LOGIC_ABI, moonbaseProvider);
 export const giftBoxLogicWritable = new ethers.Contract(TEST_GIFT_BOX_LOGIC, GIFT_BOX_LOGIC_ABI, metamaskProvider.getSigner());
+
+// Asset market logic
+export const assetMarketLogicReadable = new ethers.Contract(TEST_ASSET_MARKET_ADDRESS, ASSET_MARKET_ABI, moonbaseProvider);
+export const assetMarketLogicWritable = new ethers.Contract(TEST_ASSET_MARKET_ADDRESS, ASSET_MARKET_ABI, metamaskProvider.getSigner());
