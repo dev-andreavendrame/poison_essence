@@ -5,12 +5,27 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Image from 'mui-image';
 
 import { Grid } from '@mui/material';
 import FlipCard from './FlipCard';
+import { assetMarketLogicWritable } from './smart_contracts/MoonbaseConfig';
 
 function BonusAssetCard(props) {
+
+    // ------------------------------ //
+    // -------- Functions ----------- //
+    // ------------------------------ //
+
+    const buyAsset = () => {
+
+        assetMarketLogicWritable.buyAsset(props.internalId, 1)
+        .then(actualCopies => {
+            console.log("Bought %d copies sucessfully, now %d has been bought", 1, actualCopies);
+        }).catch(error => {
+            console.log("buyAsset: " + error);
+        })
+
+    }
 
 
     // Change Button className to 'buttonGreen' when 'disabled == false'
@@ -29,6 +44,8 @@ function BonusAssetCard(props) {
                     name={props.name}
                     cost={props.cost}
                     assetImage={props.assetImage}
+                    internalId={props.internalId}
+                    tokenId={props.tokenId}
                 />
 
                 <Box sx={{ pl: 1, pr: 1 }}>
