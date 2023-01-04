@@ -38,6 +38,9 @@ function FlipCard(props) {
                         <Box sx={{ width: 70, height: 70, mt: 2 }}>
                             <Image src={myImage} alt='SRS logo' />
                         </Box>
+                        <Typography sx={{ fontSize: 16, color: "white", mt: 2 }}>
+                            Superrisk Studio
+                        </Typography>
                     </Box>
                 </Box>
             </Box>
