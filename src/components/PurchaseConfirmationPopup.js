@@ -1,7 +1,16 @@
 import { Box, Button, Grid, TextField, Typography } from '@mui/material';
+import { useState } from 'react';
+import SaleAuthorizationPopup from './SaleAuthorizationPopup';
+import { assetMarketLogicWritable } from './smart_contracts/blockchainConfig/PolygonConfig';
 
 
 function PurchaseConfirmationPopup(props) {
+
+    const assetCost = props.cost;
+    const internalId = props.internalId;
+    const assetName = props.name;
+    const [copiesAmount, setCopiesAmount] = useState(1);
+    const [peTotalPrice, setPeTotalPrice] = useState(copiesAmount * assetCost);
 
     const popupStyle = {
         position: 'absolute',
@@ -13,6 +22,26 @@ function PurchaseConfirmationPopup(props) {
         p: 4,
         borderRadius: 8
     };
+
+    const buyAssetCopies = () => {
+        if (copiesAmount > 2 ) {
+            return <SaleAuthorizationPopup
+            key={props.key}
+            name={props.name}
+            cost={props.cost}
+            assetImage={props.assetImage}
+            internalId={props.internalId}
+            tokenId={props.tokenId}
+        />
+        }
+        assetMarketLogicWritable.buyAsset(internalId, copiesAmount)
+        .then(buyResult => {
+            console.log("Bought %d copies of the %s asset");
+        }).catch(error => {
+            console.log("Error buying asset");
+            console.log(error);
+        })
+    }
 
     return (
 
@@ -26,7 +55,7 @@ function PurchaseConfirmationPopup(props) {
                 <Grid container alignItems='center'>
                     <Grid xs={3}>
                         <Typography id="generic-popup-description" variant="h6" color='white' sx={{ fontSize: 18, fontWeight: 'normal', textShadow: ' 1px 2px 8px #303030' }}>
-                            Number of copies:
+                            Copies to buy:
                         </Typography>
                     </Grid>
                     <Grid xs={3}>
@@ -36,20 +65,31 @@ function PurchaseConfirmationPopup(props) {
                             type='number'
                             id="asset-copies-sale"
                             name="asset-copies-sale"
+                            onChange={(event) => {
+                                const amount = parseInt(event.target.value);
+                                if (amount < 1) {
+                                    setCopiesAmount(1);
+                                    setPeTotalPrice(assetCost);
+                                    document.getElementById('asset-copies-sale').value = "1";
+                                } else {
+                                    setCopiesAmount(amount);
+                                    setPeTotalPrice(amount * assetCost);
+                                }
+                            }}
 
-                            placeholder="Copies"
+                            placeholder={copiesAmount}
                         />
                     </Grid>
                     <Grid item xs={6}>
                         <Typography id="generic-popup-description" variant="h6" color='white' sx={{ ml: 4, fontSize: 18, fontWeight: 'normal', textShadow: ' 1px 2px 8px #303030' }}>
-                            Token price:
+                            Total PE amount: {peTotalPrice}
                         </Typography>
                     </Grid>
                 </Grid>
 
                 <Box display='flex' justifyContent='center' sx={{ mt: 5 }}>
-                    <Button className='buttonGreen' variant='contained' size='large' sx={{ fontWeight: 'bold' }} >
-                        Click me
+                    <Button className='buttonGreen' variant='contained' size='large' sx={{ fontWeight: 'bold' }} onClick={buyAssetCopies} >
+                        Confirm purchase
                     </Button>
                 </Box>
             </Box>
