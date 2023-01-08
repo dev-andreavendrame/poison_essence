@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
+import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/blockchainConfig/PolygonConfig';
 
 import Image from 'mui-image';
 import { Grid, Paper, Box, Button, Typography, TextField } from '@mui/material';
