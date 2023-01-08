@@ -34,7 +34,7 @@ function ExtractorSection(props) {
         if (blocksToWait === 0) {
             return "NOW!";
         } else {
-            var secondsTime = blocksToWait * 12;    // 12 seconds to mine a block on Moonbase Alpha
+            var secondsTime = blocksToWait * 2;    // 12 seconds to mine a block on Polygon
             let hours = Math.floor(secondsTime / 3600);
             secondsTime = secondsTime - 3600 * hours;
             let minutes = Math.floor(secondsTime / 60);
