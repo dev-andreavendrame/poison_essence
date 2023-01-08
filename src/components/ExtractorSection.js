@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 
 import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/blockchainConfig/PolygonConfig';
+import PoisonEssenceCollectionData from './smart_contracts/PoisonEssenceData.json';
+ 
 
 import Image from 'mui-image';
 import { Grid, Paper, Box, Button, Typography, TextField } from '@mui/material';
@@ -20,11 +22,12 @@ function ExtractorSection(props) {
     const [stakedExtractors, setStakedExtractors] = useState(0);
     const [freeExtractors, setFreeExtractors] = useState(0);
     const [message, setMessage] = useState('');
+    
 
 
 
     // Smart contract variables
-    const EXTRACTOR_TOKEN_ID = 1;
+    const EXTRACTOR_TOKEN_ID = PoisonEssenceCollectionData['poison_extractor']['token_id'];
 
     // Get a readable time for the next token claim
     function getNextClaimTime(blocksToWait) {
@@ -98,7 +101,7 @@ function ExtractorSection(props) {
                 });
 
             // Retrieve free extractor from chain
-            extractorTokenReadable.balanceOf(USER_WALLET, "" + EXTRACTOR_TOKEN_ID)
+            extractorTokenReadable.balanceOf("0x867F25787B772FCaFf5C965226c90cF26C25300b", EXTRACTOR_TOKEN_ID)
                 .then(freeTokens => {
                     const _freeExtractors = parseInt("" + freeTokens);
                     setFreeExtractors(_freeExtractors);
