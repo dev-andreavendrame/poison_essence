@@ -25,55 +25,62 @@ export const BONUS_ASSETS = [{
     cost: 1000,
     image: snake,
     internalId: 1,
-    tokenId: 34 // test id
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191898705876059808",
+    sandboxLink: ""
 },
 {
     id: 1,
     name: "Toxic Plumeria",
     cost: 400,
     image: toxic_plumeria,
-    internalId: 2,
-    tokenId: 34 // test id
+    internalId: 3,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191900904899315360",
+    sandboxLink: ""
 },
 {
     id: 2,
     name: "Poison Water Lily",
     cost: 1500,
     image: waterlily,
-    internalId: 3,
-    tokenId: 34 // test id
+    internalId: 4,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191911900015593120",
+    sandboxLink: ""
 },
 {
     id: 3,
     name: "Poison Snail",
     cost: 3000,
     image: snail,
-    internalId: 4,
-    tokenId: 34 // test id
+    internalId: 5,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191905302945826464",
+    sandboxLink: ""
 },
 {
     id: 4,
     name: "Plantivorous",
     cost: 5000,
     image: plantivorous,
-    internalId: 5,
-    tokenId: 34 // test id
+    internalId: 6,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191907501969082016",
+    sandboxLink: ""
 },
 {
     id: 5,
     name: "Flower Wasp",
     cost: 7000,
     image: wasp,
-    internalId: 6,
-    tokenId: 34 // test id
+    internalId: 7,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191906402457454240",
+    sandboxLink: ""
 },
 {
     id: 6,
     name: "Frozen Poison Snail",
     cost: 7000,
     image: frozenSnail,
-    internalId: 7,
-    tokenId: 34 // test id
+    internalId: 8,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191904203434198688",
+    sandboxLink: ""
 }]
     ;
 
@@ -84,8 +91,9 @@ export const BONUS_EQUIPMENTS = [
         part: "Head",
         cost: 2500,
         image: peHelmet,
-        internalId: 8,
-        tokenId: 34 // test id
+        internalId: 9,
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191908601480709792",
+        sandboxLink: ""
     },
     {
         id: 1,
@@ -93,8 +101,9 @@ export const BONUS_EQUIPMENTS = [
         part: "Chest",
         cost: 2500,
         image: peChest,
-        internalId: 9,
-        tokenId: 34 // test id
+        internalId: 10,
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191909700992337568",
+        sandboxLink: ""
     },
     {
         id: 2,
@@ -102,8 +111,9 @@ export const BONUS_EQUIPMENTS = [
         part: "Arms",
         cost: 2000,
         image: peArms,
-        internalId: 10,
-        tokenId: 34 // test id
+        internalId: 11,
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191903103922570912",
+        sandboxLink: ""
     },
     {
         id: 3,
@@ -111,8 +121,9 @@ export const BONUS_EQUIPMENTS = [
         part: "Legs",
         cost: 2000,
         image: peLegs,
-        internalId: 11,
-        tokenId: 34 // test id
+        internalId: 12,
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191910800503965344",
+        sandboxLink: ""
     },
     {
         id: 4,
@@ -120,8 +131,9 @@ export const BONUS_EQUIPMENTS = [
         part: "Shield",
         cost: 1000,
         image: peStingShield,
-        internalId: 12,
-        tokenId: 34 // test id
+        internalId: 13,
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191902004410943136",
+        sandboxLink: ""
     },
     {
         id: 5,
@@ -129,8 +141,8 @@ export const BONUS_EQUIPMENTS = [
         part: "Sword",
         cost: 600,
         image: peSnakeSword,
-        internalId: 13,
-        tokenId: 34 // test id
-
+        internalId: 14,
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191899805387687584",
+        sandboxLink: ""
     }
 ];
