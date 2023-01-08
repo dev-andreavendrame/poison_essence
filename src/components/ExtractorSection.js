@@ -101,7 +101,7 @@ function ExtractorSection(props) {
                 });
 
             // Retrieve free extractor from chain
-            extractorTokenReadable.balanceOf("0x867F25787B772FCaFf5C965226c90cF26C25300b", EXTRACTOR_TOKEN_ID)
+            extractorTokenReadable.balanceOf(USER_WALLET, EXTRACTOR_TOKEN_ID)
                 .then(freeTokens => {
                     const _freeExtractors = parseInt("" + freeTokens);
                     setFreeExtractors(_freeExtractors);
