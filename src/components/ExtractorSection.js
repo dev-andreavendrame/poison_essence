@@ -121,15 +121,7 @@ function ExtractorSection(props) {
 
                     // Retrieve extraction rate from chain
                     if (stakedExtractors !== 0) {
-                        extractorLogicReadable.getExtractionRate(stakedExtractors)
-                            .then(_calculatedRate => {
-                                let currentRate = (_calculatedRate / (10 ** 18) * 41940 / 5.82).toFixed(2);
-                                console.log("Current extraction rate per day %f", currentRate);
-                                setExtractionRateo(currentRate);
-                            })
-                            .catch(error => {
-                                console.log(error);
-                            })
+                        setExtractionRateo(getExtractionRate(stakedExtractors));
                     } else {
                         console.log("Zero extractors staked...");
                     }
@@ -251,3 +243,8 @@ function ExtractorSection(props) {
         </Box>
     );
 } export default ExtractorSection;
+
+function getExtractionRate(extractorsOwned) {
+    const multiplicationCoefficents = [0, 100, 126, 144, 159, 171, 182, 191, 200, 208, 215]
+    return 100 * multiplicationCoefficents[extractorsOwned];
+}
