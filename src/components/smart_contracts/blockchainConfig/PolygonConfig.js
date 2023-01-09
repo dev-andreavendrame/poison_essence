@@ -15,6 +15,9 @@ const EXTRACTOR_TOKEN_ABI = PoisonExtractorToken['abi'];
 const EXTRACTOR_LOGIC_ABI = PoisonEssenceExtractorLogic['abi'];
 const ASSET_MARKET_ABI = AssetMarketLogic['abi'];
 
+// Blockchain stats
+export const POLYGON_MINE_BLOCK_TIME = 2.06;
+
 // 1. Import ethers
 const ethers = require('ethers');
 

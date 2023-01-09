@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/blockchainConfig/PolygonConfig';
 import PoisonEssenceCollectionData from './smart_contracts/PoisonEssenceData.json';
+import { POLYGON_MINE_BLOCK_TIME } from './smart_contracts/blockchainConfig/PolygonConfig';
  
 
 import Image from 'mui-image';
@@ -34,7 +35,7 @@ function ExtractorSection(props) {
         if (blocksToWait === 0) {
             return "NOW!";
         } else {
-            var secondsTime = blocksToWait * 2;    // 12 seconds to mine a block on Polygon
+            var secondsTime = blocksToWait * POLYGON_MINE_BLOCK_TIME;
             let hours = Math.floor(secondsTime / 3600);
             secondsTime = secondsTime - 3600 * hours;
             let minutes = Math.floor(secondsTime / 60);
@@ -122,7 +123,7 @@ function ExtractorSection(props) {
                     if (stakedExtractors !== 0) {
                         extractorLogicReadable.getExtractionRate(stakedExtractors)
                             .then(_calculatedRate => {
-                                let currentRate = (_calculatedRate / (10 ** 18) * 7200).toFixed(5);
+                                let currentRate = (_calculatedRate / (10 ** 18) * 41940).toFixed(5);
                                 console.log("Current extraction rate per day %f", currentRate);
                                 setExtractionRateo(currentRate);
                             })
