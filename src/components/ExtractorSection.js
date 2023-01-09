@@ -246,5 +246,5 @@ function ExtractorSection(props) {
 
 function getExtractionRate(extractorsOwned) {
     const multiplicationCoefficents = [0, 100, 126, 144, 159, 171, 182, 191, 200, 208, 215]
-    return 100 * multiplicationCoefficents[extractorsOwned];
+    return extractorsOwned * multiplicationCoefficents[extractorsOwned];
 }
