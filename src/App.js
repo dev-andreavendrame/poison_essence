@@ -241,6 +241,9 @@ function App() {
                         name={info['name']}
                         cost={info['cost']}
                         assetImage={info['image']}
+                        internalId={info['internalId']}
+                        tokenId={info['tokenId']}
+                        wallet={currentAccount}
                       />
                     </Box>
                   </Grid>
