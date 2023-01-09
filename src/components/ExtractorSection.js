@@ -123,7 +123,7 @@ function ExtractorSection(props) {
                     if (stakedExtractors !== 0) {
                         extractorLogicReadable.getExtractionRate(stakedExtractors)
                             .then(_calculatedRate => {
-                                let currentRate = (_calculatedRate / (10 ** 18) * 41940).toFixed(5);
+                                let currentRate = (_calculatedRate / (10 ** 18) * 41940 / 5.82).toFixed(2);
                                 console.log("Current extraction rate per day %f", currentRate);
                                 setExtractionRateo(currentRate);
                             })
