@@ -60,11 +60,13 @@ function BonusAssetCard(props) {
                     assetImage={props.assetImage}
                     internalId={props.internalId}
                     tokenId={props.tokenId}
+                    madeBy={props.madeBy}
+                    logo={props.logo}
                 />
 
                 <Box sx={{ pl: 1, pr: 1 }}>
                     <Typography sx={{ fontSize: 20, color: "white", mt: 2 }}>
-                        Price: {props.cost}
+                        Price: {props.cost > 0 ? props.cost : "?"}
                     </Typography>
                 </Box>
             </CardContent>
@@ -100,10 +102,15 @@ function BonusAssetCard(props) {
                                 />}
                         </Modal>
 
+                        {props.cost > 0 ?
+                            <Button className='buttonGreen' variant="contained" size="medium" onClick={handleOpen}>
+                                Buy
+                            </Button> :
+                            <Button className='buttonGreen' variant="contained" size="medium" disabled>
+                                Buy
+                            </Button>
+                        }
 
-                        <Button className='buttonGreen' variant="contained" size="medium" onClick={handleOpen}>
-                            Buy
-                        </Button>
                     </Grid>
                     <Grid item xs={8}>
                         <Box sx={{ display: 'flex', justifyContent: 'flex-end' }} >

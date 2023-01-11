@@ -1,3 +1,8 @@
+// Logos start -->
+import srsLogo from './images/SRS_logo.png'; 
+import tempLogo from './images/temp_logo.jpg';
+// Logos end <--
+
 // Assets start -->
 import snake from './images/toxic_snake.jpg';
 import toxic_plumeria from './images/plumeria.jpg';
@@ -16,6 +21,7 @@ import peLegs from './images/pe_legs.jpg';
 import peChest from './images/pe_chest.jpg';
 import peStingShield from './images/pe_shield_sting.jpg';
 import peSnakeSword from './images/pe_snake_sword.jpg';
+import blurred from './images/New_asset_blurred.png';
 
 // <-- equipment end
 
@@ -26,7 +32,9 @@ export const BONUS_ASSETS = [{
     image: snake,
     internalId: 1,
     tokenId: "105358272762175259458146981548426915326652569204453104744298191898705876059808",
-    sandboxLink: ""
+    sandboxLink: "",
+    madeBy: "Superrisk Studio",
+    logo: srsLogo
 },
 {
     id: 1,
@@ -35,7 +43,9 @@ export const BONUS_ASSETS = [{
     image: toxic_plumeria,
     internalId: 3,
     tokenId: "105358272762175259458146981548426915326652569204453104744298191900904899315360",
-    sandboxLink: ""
+    sandboxLink: "",
+    madeBy: "Superrisk Studio",
+    logo: srsLogo
 },
 {
     id: 2,
@@ -44,7 +54,9 @@ export const BONUS_ASSETS = [{
     image: waterlily,
     internalId: 4,
     tokenId: "105358272762175259458146981548426915326652569204453104744298191911900015593120",
-    sandboxLink: ""
+    sandboxLink: "",
+    madeBy: "Superrisk Studio",
+    logo: srsLogo
 },
 {
     id: 3,
@@ -53,7 +65,8 @@ export const BONUS_ASSETS = [{
     image: snail,
     internalId: 5,
     tokenId: "105358272762175259458146981548426915326652569204453104744298191905302945826464",
-    sandboxLink: ""
+    sandboxLink: "",
+    logo: srsLogo
 },
 {
     id: 4,
@@ -62,7 +75,9 @@ export const BONUS_ASSETS = [{
     image: plantivorous,
     internalId: 6,
     tokenId: "105358272762175259458146981548426915326652569204453104744298191907501969082016",
-    sandboxLink: ""
+    sandboxLink: "",
+    madeBy: "Superrisk Studio",
+    logo: srsLogo
 },
 {
     id: 5,
@@ -71,7 +86,9 @@ export const BONUS_ASSETS = [{
     image: wasp,
     internalId: 7,
     tokenId: "105358272762175259458146981548426915326652569204453104744298191906402457454240",
-    sandboxLink: ""
+    sandboxLink: "",
+    madeBy: "Superrisk Studio",
+    logo: srsLogo
 },
 {
     id: 6,
@@ -80,7 +97,9 @@ export const BONUS_ASSETS = [{
     image: frozenSnail,
     internalId: 8,
     tokenId: "105358272762175259458146981548426915326652569204453104744298191904203434198688",
-    sandboxLink: ""
+    sandboxLink: "",
+    madeBy: "Superrisk Studio",
+    logo: srsLogo
 }]
     ;
 
@@ -93,7 +112,9 @@ export const BONUS_EQUIPMENTS = [
         image: peHelmet,
         internalId: 9,
         tokenId: "105358272762175259458146981548426915326652569204453104744298191908601480709792",
-        sandboxLink: ""
+        sandboxLink: "",
+        madeBy: "Superrisk Studio",
+        logo: srsLogo
     },
     {
         id: 1,
@@ -103,7 +124,9 @@ export const BONUS_EQUIPMENTS = [
         image: peChest,
         internalId: 10,
         tokenId: "105358272762175259458146981548426915326652569204453104744298191909700992337568",
-        sandboxLink: ""
+        sandboxLink: "",
+        madeBy: "Superrisk Studio",
+        logo: srsLogo
     },
     {
         id: 2,
@@ -113,7 +136,9 @@ export const BONUS_EQUIPMENTS = [
         image: peArms,
         internalId: 11,
         tokenId: "105358272762175259458146981548426915326652569204453104744298191903103922570912",
-        sandboxLink: ""
+        sandboxLink: "",
+        madeBy: "Superrisk Studio",
+        logo: srsLogo
     },
     {
         id: 3,
@@ -123,7 +148,9 @@ export const BONUS_EQUIPMENTS = [
         image: peLegs,
         internalId: 12,
         tokenId: "105358272762175259458146981548426915326652569204453104744298191910800503965344",
-        sandboxLink: ""
+        sandboxLink: "",
+        madeBy: "Superrisk Studio",
+        logo: srsLogo
     },
     {
         id: 4,
@@ -133,7 +160,9 @@ export const BONUS_EQUIPMENTS = [
         image: peStingShield,
         internalId: 13,
         tokenId: "105358272762175259458146981548426915326652569204453104744298191902004410943136",
-        sandboxLink: ""
+        sandboxLink: "",
+        madeBy: "Superrisk Studio",
+        logo: srsLogo
     },
     {
         id: 5,
@@ -143,6 +172,20 @@ export const BONUS_EQUIPMENTS = [
         image: peSnakeSword,
         internalId: 14,
         tokenId: "105358272762175259458146981548426915326652569204453104744298191899805387687584",
-        sandboxLink: ""
+        sandboxLink: "",
+        madeBy: "Superrisk Studio",
+        logo: srsLogo
+    },
+    {
+        id: 6,
+        name: "Unknown",
+        part: "Unknown",
+        cost: 0,
+        image: blurred,
+        internalId: 15,
+        tokenId: "",
+        sandboxLink: "",
+        madeBy: "Not revealed yet",
+        logo: tempLogo
     }
 ];

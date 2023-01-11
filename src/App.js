@@ -212,6 +212,8 @@ function App() {
                         assetImage={info['image']}
                         internalId={info['internalId']}
                         tokenId={info['tokenId']}
+                        madeBy={info['madeBy']}
+                        logo={info['logo']}
                         wallet={currentAccount}
                       />
                     </Box>
@@ -243,6 +245,8 @@ function App() {
                         assetImage={info['image']}
                         internalId={info['internalId']}
                         tokenId={info['tokenId']}
+                        madeBy={info['madeBy']}
+                        logo={info['logo']}
                         wallet={currentAccount}
                       />
                     </Box>

@@ -1,21 +1,7 @@
-import { useState } from 'react';
 import './FlipCard.css';
-
-import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './BonusAssetsData';
-
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'mui-image';
-import { Grid } from '@mui/material';
-
-import BonusAssetCard from './BonusAssetCard';
-
-import myImage from './images/SRS_logo.png';
-
 
 function FlipCard(props) {
 
@@ -36,10 +22,10 @@ function FlipCard(props) {
                             Made by:
                         </Typography>
                         <Box sx={{ width: 70, height: 70, mt: 2 }}>
-                            <Image src={myImage} alt='SRS logo' />
+                            <Image src={props.logo} alt='SRS logo' />
                         </Box>
                         <Typography sx={{ fontSize: 16, color: "white", mt: 2 }}>
-                            Superrisk Studio
+                            {props.madeBy}
                         </Typography>
                     </Box>
                 </Box>
