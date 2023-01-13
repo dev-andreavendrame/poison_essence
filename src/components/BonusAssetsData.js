@@ -34,7 +34,15 @@ export const BONUS_ASSETS = [{
     tokenId: "105358272762175259458146981548426915326652569204453104744298191898705876059808",
     sandboxLink: "",
     madeBy: "Superrisk Studio",
-    logo: srsLogo
+    logo: srsLogo,
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    }
 },
 {
     id: 1,
@@ -45,7 +53,15 @@ export const BONUS_ASSETS = [{
     tokenId: "105358272762175259458146981548426915326652569204453104744298191900904899315360",
     sandboxLink: "",
     madeBy: "Superrisk Studio",
-    logo: srsLogo
+    logo: srsLogo,
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    }
 },
 {
     id: 2,
@@ -56,7 +72,15 @@ export const BONUS_ASSETS = [{
     tokenId: "105358272762175259458146981548426915326652569204453104744298191911900015593120",
     sandboxLink: "",
     madeBy: "Superrisk Studio",
-    logo: srsLogo
+    logo: srsLogo,
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    }
 },
 {
     id: 3,
@@ -66,7 +90,15 @@ export const BONUS_ASSETS = [{
     internalId: 5,
     tokenId: "105358272762175259458146981548426915326652569204453104744298191905302945826464",
     sandboxLink: "",
-    logo: srsLogo
+    logo: srsLogo,
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    }
 },
 {
     id: 4,
@@ -77,7 +109,15 @@ export const BONUS_ASSETS = [{
     tokenId: "105358272762175259458146981548426915326652569204453104744298191907501969082016",
     sandboxLink: "",
     madeBy: "Superrisk Studio",
-    logo: srsLogo
+    logo: srsLogo,
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    }
 },
 {
     id: 5,
@@ -88,7 +128,15 @@ export const BONUS_ASSETS = [{
     tokenId: "105358272762175259458146981548426915326652569204453104744298191906402457454240",
     sandboxLink: "",
     madeBy: "Superrisk Studio",
-    logo: srsLogo
+    logo: srsLogo,
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    }
 },
 {
     id: 6,
@@ -99,7 +147,15 @@ export const BONUS_ASSETS = [{
     tokenId: "105358272762175259458146981548426915326652569204453104744298191904203434198688",
     sandboxLink: "",
     madeBy: "Superrisk Studio",
-    logo: srsLogo
+    logo: srsLogo,
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    }
 }]
     ;
 
@@ -114,7 +170,15 @@ export const BONUS_EQUIPMENTS = [
         tokenId: "105358272762175259458146981548426915326652569204453104744298191908601480709792",
         sandboxLink: "",
         madeBy: "Superrisk Studio",
-        logo: srsLogo
+        logo: srsLogo,
+        socials: {
+            instagram: "",
+            website: "",
+            twitter: "",
+            discord: "",
+            twitch: "",
+            youtube: ""
+        }
     },
     {
         id: 1,
@@ -126,7 +190,15 @@ export const BONUS_EQUIPMENTS = [
         tokenId: "105358272762175259458146981548426915326652569204453104744298191909700992337568",
         sandboxLink: "",
         madeBy: "Superrisk Studio",
-        logo: srsLogo
+        logo: srsLogo,
+        socials: {
+            instagram: "",
+            website: "",
+            twitter: "",
+            discord: "",
+            twitch: "",
+            youtube: ""
+        }
     },
     {
         id: 2,
@@ -138,7 +210,15 @@ export const BONUS_EQUIPMENTS = [
         tokenId: "105358272762175259458146981548426915326652569204453104744298191903103922570912",
         sandboxLink: "",
         madeBy: "Superrisk Studio",
-        logo: srsLogo
+        logo: srsLogo,
+        socials: {
+            instagram: "",
+            website: "",
+            twitter: "",
+            discord: "",
+            twitch: "",
+            youtube: ""
+        }
     },
     {
         id: 3,
@@ -150,7 +230,15 @@ export const BONUS_EQUIPMENTS = [
         tokenId: "105358272762175259458146981548426915326652569204453104744298191910800503965344",
         sandboxLink: "",
         madeBy: "Superrisk Studio",
-        logo: srsLogo
+        logo: srsLogo,
+        socials: {
+            instagram: "",
+            website: "",
+            twitter: "",
+            discord: "",
+            twitch: "",
+            youtube: ""
+        }
     },
     {
         id: 4,
@@ -162,7 +250,15 @@ export const BONUS_EQUIPMENTS = [
         tokenId: "105358272762175259458146981548426915326652569204453104744298191902004410943136",
         sandboxLink: "",
         madeBy: "Superrisk Studio",
-        logo: srsLogo
+        logo: srsLogo,
+        socials: {
+            instagram: "",
+            website: "",
+            twitter: "",
+            discord: "",
+            twitch: "",
+            youtube: ""
+        }
     },
     {
         id: 5,
@@ -174,7 +270,15 @@ export const BONUS_EQUIPMENTS = [
         tokenId: "105358272762175259458146981548426915326652569204453104744298191899805387687584",
         sandboxLink: "",
         madeBy: "Superrisk Studio",
-        logo: srsLogo
+        logo: srsLogo,
+        socials: {
+            instagram: "",
+            website: "",
+            twitter: "",
+            discord: "",
+            twitch: "",
+            youtube: ""
+        }
     },
     {
         id: 6,
@@ -186,6 +290,14 @@ export const BONUS_EQUIPMENTS = [
         tokenId: "",
         sandboxLink: "",
         madeBy: "Not revealed yet",
-        logo: tempLogo
+        logo: tempLogo,
+        socials: {
+            instagram: "",
+            website: "",
+            twitter: "",
+            discord: "",
+            twitch: "",
+            youtube: ""
+        }
     }
 ];
