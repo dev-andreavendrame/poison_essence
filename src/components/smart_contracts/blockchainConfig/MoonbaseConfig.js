@@ -1,8 +1,8 @@
-import PoisonEssenceToken from './ABI/PoisonEssenceToken.json';
-import PoisonExtractorToken from './ABI/PlaceholderExtractor.json';
-import PoisonEssenceExtractorLogic from './ABI/PoisonEssenceExtractor.json';
-import GiftBoxLogic from './ABI/PoisonGiftBox.json';
-import AssetMarketLogic from './ABI/PoisonEssenceAssets.json';
+import PoisonEssenceToken from '../ABI/PoisonEssenceToken.json';
+import PoisonExtractorToken from '../ABI/PlaceholderExtractor.json';
+import PoisonEssenceExtractorLogic from '../ABI/PoisonEssenceExtractor.json';
+import GiftBoxLogic from '../ABI/PoisonGiftBox.json';
+import AssetMarketLogic from '../ABI/PoisonEssenceAssets.json';
 
 // Smart Contract addresses
 export const PLACEHOLDER_EXTRACTOR_ADDRESS = "0xB7CC731b4fbE236D3b8dCBcFaF166E7d7726d0a1";

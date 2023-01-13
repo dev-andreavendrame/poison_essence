@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/MoonbaseConfig';
+import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/blockchainConfig/PolygonConfig';
+import PoisonEssenceCollectionData from './smart_contracts/PoisonEssenceData.json';
+import { POLYGON_MINE_BLOCK_TIME } from './smart_contracts/blockchainConfig/PolygonConfig';
+ 
 
 import Image from 'mui-image';
 import { Grid, Paper, Box, Button, Typography, TextField } from '@mui/material';
@@ -20,18 +23,19 @@ function ExtractorSection(props) {
     const [stakedExtractors, setStakedExtractors] = useState(0);
     const [freeExtractors, setFreeExtractors] = useState(0);
     const [message, setMessage] = useState('');
+    
 
 
 
     // Smart contract variables
-    const EXTRACTOR_TOKEN_ID = 1;
+    const EXTRACTOR_TOKEN_ID = PoisonEssenceCollectionData['poison_extractor']['token_id'];
 
     // Get a readable time for the next token claim
     function getNextClaimTime(blocksToWait) {
         if (blocksToWait === 0) {
             return "NOW!";
         } else {
-            var secondsTime = blocksToWait * 12;    // 12 seconds to mine a block on Moonbase Alpha
+            var secondsTime = blocksToWait * POLYGON_MINE_BLOCK_TIME;
             let hours = Math.floor(secondsTime / 3600);
             secondsTime = secondsTime - 3600 * hours;
             let minutes = Math.floor(secondsTime / 60);
@@ -98,7 +102,7 @@ function ExtractorSection(props) {
                 });
 
             // Retrieve free extractor from chain
-            extractorTokenReadable.balanceOf(USER_WALLET, "" + EXTRACTOR_TOKEN_ID)
+            extractorTokenReadable.balanceOf(USER_WALLET, EXTRACTOR_TOKEN_ID)
                 .then(freeTokens => {
                     const _freeExtractors = parseInt("" + freeTokens);
                     setFreeExtractors(_freeExtractors);
@@ -117,15 +121,7 @@ function ExtractorSection(props) {
 
                     // Retrieve extraction rate from chain
                     if (stakedExtractors !== 0) {
-                        extractorLogicReadable.getExtractionRate(stakedExtractors)
-                            .then(_calculatedRate => {
-                                let currentRate = (_calculatedRate / (10 ** 18) * 7200).toFixed(5);
-                                console.log("Current extraction rate per day %f", currentRate);
-                                setExtractionRateo(currentRate);
-                            })
-                            .catch(error => {
-                                console.log(error);
-                            })
+                        setExtractionRateo(getExtractionRate(stakedExtractors));
                     } else {
                         console.log("Zero extractors staked...");
                     }
@@ -247,3 +243,8 @@ function ExtractorSection(props) {
         </Box>
     );
 } export default ExtractorSection;
+
+function getExtractionRate(extractorsOwned) {
+    const multiplicationCoefficents = [0, 100, 126, 144, 159, 171, 182, 191, 200, 208, 215]
+    return extractorsOwned * multiplicationCoefficents[extractorsOwned];
+}

@@ -3,7 +3,7 @@ import './App.css';
 
 // Logic
 import { BONUS_ASSETS, BONUS_EQUIPMENTS } from './components/BonusAssetsData';
-import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, extractorTokenWritable, TEST_EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/MoonbaseConfig';
+import { extractorLogicWritable, extractorTokenWritable, EXTRACTOR_LOGIC_ADDRESS } from './components/smart_contracts/blockchainConfig/PolygonConfig';
 
 // External components
 import Box from '@mui/material/Box';
@@ -88,7 +88,7 @@ function App() {
   const approveExtractorsManagement = async () => {
 
     if (currentAccount !== "") {
-      extractorTokenWritable.setApprovalForAll(TEST_EXTRACTOR_LOGIC_ADDRESS, true)
+      extractorTokenWritable.setApprovalForAll(EXTRACTOR_LOGIC_ADDRESS, true)
         .then(() => {
           console.log("Extractors management approved.");
         })
@@ -135,23 +135,6 @@ function App() {
         </MButton>
       </Box>
     );
-    extractorLogicReadable.lastInteraction()
-      .then((lastInteraction) => {
-        console.log("Ultima interazione: " + lastInteraction);
-        return (
-          <Box />
-        );
-      }).catch(error => {
-        console.log("Ultima interazione errore");
-        console.log(error);
-        return (
-          <Box >
-            <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', borderRadius: 2, maxWidth: '100px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={initializeAccount}>
-              Initialize account
-            </MButton>
-          </Box>
-        );
-      });
   }
 
   function showApprovalButton() {
@@ -162,29 +145,6 @@ function App() {
         </MButton>
       </Box>
     );
-    extractorTokenReadable.isApprovedForAll(currentAccount, TEST_EXTRACTOR_LOGIC_ADDRESS)
-      .then((operatorApproved) => {
-        console.log("Approved operator: " + operatorApproved);
-        if (!operatorApproved) {
-          return (
-            <Box >
-              <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2, maxWidth: '200px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={approveExtractorsManagement}>
-                Approve&nbsp;Extractors management
-              </MButton>
-            </Box>
-          );
-        }
-      }).catch(error => {
-        console.log("Approved operator errore");
-        console.log(error);
-        return (
-          <Box >
-            <MButton className="buttonDark" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mr: 1, borderRadius: 2, maxWidth: '200px', maxHeight: '60px', minWidth: '5px', minHeight: '5px', fontSize: 'clamp(10px, 1vw, 14px)' }} variant="contained" onClick={approveExtractorsManagement}>
-              Approve&nbsp;Extractors management
-            </MButton>
-          </Box>
-        );
-      });
   }
 
 
@@ -252,6 +212,9 @@ function App() {
                         assetImage={info['image']}
                         internalId={info['internalId']}
                         tokenId={info['tokenId']}
+                        madeBy={info['madeBy']}
+                        logo={info['logo']}
+                        wallet={currentAccount}
                       />
                     </Box>
                   </Grid>
@@ -269,7 +232,7 @@ function App() {
           </Box>
 
 
-          <Grid container spacing={5} direction="row" justifyContent="center" alignItems="flex-start"  sx={{ mt: 1 }}>
+          <Grid container spacing={5} direction="row" justifyContent="center" alignItems="flex-start" sx={{ mt: 1 }}>
             {
               BONUS_EQUIPMENTS.map((info) => {
                 return (
@@ -280,6 +243,11 @@ function App() {
                         name={info['name']}
                         cost={info['cost']}
                         assetImage={info['image']}
+                        internalId={info['internalId']}
+                        tokenId={info['tokenId']}
+                        madeBy={info['madeBy']}
+                        logo={info['logo']}
+                        wallet={currentAccount}
                       />
                     </Box>
                   </Grid>

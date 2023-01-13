@@ -1,8 +1,7 @@
-import PoisonEssenceToken from './ABI/PoisonEssenceToken.json';
-import PoisonExtractorToken from './ABI/PlaceholderExtractor.json';
-import PoisonEssenceExtractorLogic from './ABI/PoisonEssenceExtractor.json';
-import GiftBoxLogic from './ABI/PoisonGiftBox.json';
-import AssetMarketLogic from './ABI/PoisonEssenceAssets.json';
+import PoisonEssenceToken from '../ABI/PoisonEssenceToken.json';
+import PoisonExtractorToken from '../ABI/PlaceholderExtractor.json';
+import PoisonEssenceExtractorLogic from '../ABI/PoisonEssenceExtractor.json';
+import AssetMarketLogic from '../ABI/PoisonEssenceAssets.json';
 
 // Polygon smart contract addresses
 export const OPENSEA_EXTRACTOR_ADDRESS = "0x2953399124F0cBB46d2CbACD8A89cF0599974963";
@@ -15,6 +14,9 @@ const PE_TOKEN_ABI = PoisonEssenceToken['abi'];
 const EXTRACTOR_TOKEN_ABI = PoisonExtractorToken['abi'];
 const EXTRACTOR_LOGIC_ABI = PoisonEssenceExtractorLogic['abi'];
 const ASSET_MARKET_ABI = AssetMarketLogic['abi'];
+
+// Blockchain stats
+export const POLYGON_MINE_BLOCK_TIME = 2.06;
 
 // 1. Import ethers
 const ethers = require('ethers');
@@ -44,21 +46,17 @@ export const metamaskProvider = new ethers.providers.Web3Provider(window.ethereu
 // ---------------------------------- //
 
 // Poison Essence token
-export const peTokenReadable = new ethers.Contract(TEST_TOKEN_ADDRESS, PE_TOKEN_ABI, polygonProvider);
-export const peTokenWritable = new ethers.Contract(TEST_TOKEN_ADDRESS, PE_TOKEN_ABI, metamaskProvider.getSigner());
+export const peTokenReadable = new ethers.Contract(PE_TOKEN_ADDRESS, PE_TOKEN_ABI, polygonProvider);
+export const peTokenWritable = new ethers.Contract(PE_TOKEN_ADDRESS, PE_TOKEN_ABI, metamaskProvider.getSigner());
 
 // Placeholder for Poison Extractor
-export const extractorTokenReadable = new ethers.Contract(PLACEHOLDER_EXTRACTOR_ADDRESS, EXTRACTOR_TOKEN_ABI, polygonProvider);
-export const extractorTokenWritable = new ethers.Contract(PLACEHOLDER_EXTRACTOR_ADDRESS, EXTRACTOR_TOKEN_ABI, metamaskProvider.getSigner());
+export const extractorTokenReadable = new ethers.Contract(OPENSEA_EXTRACTOR_ADDRESS, EXTRACTOR_TOKEN_ABI, polygonProvider);
+export const extractorTokenWritable = new ethers.Contract(OPENSEA_EXTRACTOR_ADDRESS, EXTRACTOR_TOKEN_ABI, metamaskProvider.getSigner());
 
 // Poison Extractor logic
-export const extractorLogicReadable = new ethers.Contract(TEST_EXTRACTOR_LOGIC_ADDRESS, EXTRACTOR_LOGIC_ABI, polygonProvider);
-export const extractorLogicWritable = new ethers.Contract(TEST_EXTRACTOR_LOGIC_ADDRESS, EXTRACTOR_LOGIC_ABI, metamaskProvider.getSigner());
-
-// Gift box logic
-export const giftBoxLogicReadable = new ethers.Contract(TEST_GIFT_BOX_LOGIC, GIFT_BOX_LOGIC_ABI, polygonProvider);
-export const giftBoxLogicWritable = new ethers.Contract(TEST_GIFT_BOX_LOGIC, GIFT_BOX_LOGIC_ABI, metamaskProvider.getSigner());
+export const extractorLogicReadable = new ethers.Contract(EXTRACTOR_LOGIC_ADDRESS, EXTRACTOR_LOGIC_ABI, polygonProvider);
+export const extractorLogicWritable = new ethers.Contract(EXTRACTOR_LOGIC_ADDRESS, EXTRACTOR_LOGIC_ABI, metamaskProvider.getSigner());
 
 // Asset market logic
-export const assetMarketLogicReadable = new ethers.Contract(TEST_ASSET_MARKET_ADDRESS, ASSET_MARKET_ABI, polygonProvider);
-export const assetMarketLogicWritable = new ethers.Contract(TEST_ASSET_MARKET_ADDRESS, ASSET_MARKET_ABI, metamaskProvider.getSigner());
+export const assetMarketLogicReadable = new ethers.Contract(ASSET_MARKET_LOGIC_ADDRESS, ASSET_MARKET_ABI, polygonProvider);
+export const assetMarketLogicWritable = new ethers.Contract(ASSET_MARKET_LOGIC_ADDRESS, ASSET_MARKET_ABI, metamaskProvider.getSigner());
