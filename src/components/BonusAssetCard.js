@@ -93,7 +93,7 @@ function BonusAssetCard(props) {
                                 />}
                         </Modal>
 
-                        <Button className='buttonGreen' variant="contained" size="medium" onClick={handleOpen} >
+                        <Button className='buttonGreen' variant="contained" size="medium" onClick={handleOpen} disabled>
                             Buy
                         </Button>
                     </Grid>

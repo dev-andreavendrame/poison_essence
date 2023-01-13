@@ -1,7 +1,7 @@
 {
     "collection_name": "Poison Essence",
     "assets": {
-        "number": 6
+        "number": 7
     },
     "equipments": {
         "number": 6
@@ -12,5 +12,9 @@
     },
     "market": {
         "price_increment_per_day": "0.005"
+    },
+    "poison_extractor": {
+        "token_id": 105358272762175259458146981548426915326652569204453104744298191896506852704456,
+        "token_smart_contract_address": "0x2953399124F0cBB46d2CbACD8A89cF0599974963"
     }
 }
