@@ -36,9 +36,9 @@ export const BONUS_ASSETS = [{
     madeBy: "Superrisk Studio",
     logo: srsLogo,
     socials: {
-        instagram: "",
-        website: "",
-        twitter: "",
+        instagram: "a",
+        website: "a",
+        twitter: "a",
         discord: "",
         twitch: "",
         youtube: ""
@@ -58,9 +58,9 @@ export const BONUS_ASSETS = [{
         instagram: "",
         website: "",
         twitter: "",
-        discord: "",
-        twitch: "",
-        youtube: ""
+        discord: "a",
+        twitch: "a",
+        youtube: "a"
     }
 },
 {
