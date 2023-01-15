@@ -35,10 +35,11 @@ export const BONUS_ASSETS = [{
     sandboxLink: "",
     madeBy: "Superrisk Studio",
     logo: srsLogo,
+    lore: "Hidden in the tangles of the trees and bushes, the scientist discovered a big species of snake: these reptiles live in places where the density of Poison Essence is higher. Spreading the Poison Essence on a tree's bark can sometimes attract the Toxic Snake, but be careful: its bite can be extremely painful!",
     socials: {
-        instagram: "",
-        website: "",
-        twitter: "",
+        instagram: "https://www.instagram.com/superrisk_studio/",
+        website: "www.superrisknft.com",
+        twitter: "https://twitter.com/s_superrisk",
         discord: "",
         twitch: "",
         youtube: ""
@@ -54,10 +55,11 @@ export const BONUS_ASSETS = [{
     sandboxLink: "",
     madeBy: "Superrisk Studio",
     logo: srsLogo,
+    lore: "Science and nature fused in this flower, when the scientist decided to experiment with the Poison Essence: they injected the essence in a plant from Earth, and it mutated in a beautiful huge flower. However, as they could foresee, the Poison Essence made it toxic... so now it has to be handled with care!",
     socials: {
-        instagram: "",
-        website: "",
-        twitter: "",
+        instagram: "https://www.instagram.com/superrisk_studio/",
+        website: "www.superrisknft.com",
+        twitter: "https://twitter.com/s_superrisk",
         discord: "",
         twitch: "",
         youtube: ""
@@ -73,10 +75,11 @@ export const BONUS_ASSETS = [{
     sandboxLink: "",
     madeBy: "Superrisk Studio",
     logo: srsLogo,
+    lore: "Water lilies are common in swamps and humid places... And of course they exist also in Toxic World. These splendid plants attract all the types of insects with their scent: the bugs have evolved to survive its poisonous nectar, while scientists use all sort of protections to gather it and transform it into Poison Essence",
     socials: {
-        instagram: "",
-        website: "",
-        twitter: "",
+        instagram: "https://www.instagram.com/superrisk_studio/",
+        website: "www.superrisknft.com",
+        twitter: "https://twitter.com/s_superrisk",
         discord: "",
         twitch: "",
         youtube: ""
@@ -91,10 +94,11 @@ export const BONUS_ASSETS = [{
     tokenId: "105358272762175259458146981548426915326652569204453104744298191905302945826464",
     sandboxLink: "",
     logo: srsLogo,
+    lore: "Sometimes, the bad luck of a distracted scientist can lead to a huge discovery. One of the employees of the Extractors stumbled on a root and spilled all the Poison Essence on a nest of Mutant Egg Bulbs... and suddenly, the eggs absorbed the essence! The mysterious creatures that emerged were nothing but snails: they started to crawl around, demonstrating that those hard eggs were actually snail shells!",
     socials: {
-        instagram: "",
-        website: "",
-        twitter: "",
+        instagram: "https://www.instagram.com/superrisk_studio/",
+        website: "www.superrisknft.com",
+        twitter: "https://twitter.com/s_superrisk",
         discord: "",
         twitch: "",
         youtube: ""
@@ -110,10 +114,11 @@ export const BONUS_ASSETS = [{
     sandboxLink: "",
     madeBy: "Superrisk Studio",
     logo: srsLogo,
+    lore: "The nature is constantly evolving and this carnivorous plant is yet another proof. Scientists have observed it eating various bugs and even small animals: its juices are - of course - poisonous, and probably are the result of the digestion of toxic preys",
     socials: {
-        instagram: "",
-        website: "",
-        twitter: "",
+        instagram: "https://www.instagram.com/superrisk_studio/",
+        website: "www.superrisknft.com",
+        twitter: "https://twitter.com/s_superrisk",
         discord: "",
         twitch: "",
         youtube: ""
@@ -129,10 +134,11 @@ export const BONUS_ASSETS = [{
     sandboxLink: "",
     madeBy: "Superrisk Studio",
     logo: srsLogo,
+    lore: "During the latest observations, a researcher has been attacked by the wildlife! He was watching and studying a bunch of Venom Flowers, when one of them jumped and flew around, and then stung him! Further analyzes declared the attacker was not a Venom Flower, but a special type of wasp camouflaged as a flower, probably as a defensive method",
     socials: {
-        instagram: "",
-        website: "",
-        twitter: "",
+        instagram: "https://www.instagram.com/superrisk_studio/",
+        website: "www.superrisknft.com",
+        twitter: "https://twitter.com/s_superrisk",
         discord: "",
         twitch: "",
         youtube: ""
@@ -148,10 +154,11 @@ export const BONUS_ASSETS = [{
     sandboxLink: "",
     madeBy: "Superrisk Studio",
     logo: srsLogo,
+    lore: "Exploring the poles of the Toxic World, a new subspecies of the Poison Snail has been discovered. It has adapted to the harsh and cold climate, becoming resistant to the icy winds and changing its color to better blend with the surroundings. As of now, it's one of the rarest creatures of the Toxic World!",
     socials: {
-        instagram: "",
-        website: "",
-        twitter: "",
+        instagram: "https://www.instagram.com/superrisk_studio/",
+        website: "www.superrisknft.com",
+        twitter: "https://twitter.com/s_superrisk",
         discord: "",
         twitch: "",
         youtube: ""
@@ -171,10 +178,11 @@ export const BONUS_EQUIPMENTS = [
         sandboxLink: "",
         madeBy: "Superrisk Studio",
         logo: srsLogo,
+        lore: "Eureka! Finally, the armor is complete! The last piece, an ancient helmet, has been found inside a very well-hidden temple, among the intricate vegetation of a jungle: if it wasn't for the echo, the scientists would have probably never found it. Now that the armor has all the pieces, the echo has ended. Of course, someone tried to put it on: the armor has some power indeed, as it changes to fit perfectly the person who wears it. However, it grants no superpower... or at least nobody has discovered it yet!",
         socials: {
-            instagram: "",
-            website: "",
-            twitter: "",
+            instagram: "https://www.instagram.com/superrisk_studio/",
+            website: "www.superrisknft.com",
+            twitter: "https://twitter.com/s_superrisk",
             discord: "",
             twitch: "",
             youtube: ""
@@ -191,10 +199,11 @@ export const BONUS_EQUIPMENTS = [
         sandboxLink: "",
         madeBy: "Superrisk Studio",
         logo: srsLogo,
+        lore: "Here it is, the third piece! This chest armor has been located studying the frequences of the Ancient Toxic Gloves and Boots: it was laying inside a huge, hollow tree, under an intricate wall of roots. As expected, it interacts with the other parts in the same strange way: they now emit a clear signal, as if they were impatient to reunite with the next (and probably last) piece. The scientist have begun to speculate about what will happen when the armor will be complete, guessing about superpowers or other fantasies",
         socials: {
-            instagram: "",
-            website: "",
-            twitter: "",
+            instagram: "https://www.instagram.com/superrisk_studio/",
+            website: "www.superrisknft.com",
+            twitter: "https://twitter.com/s_superrisk",
             discord: "",
             twitch: "",
             youtube: ""
@@ -211,10 +220,11 @@ export const BONUS_EQUIPMENTS = [
         sandboxLink: "",
         madeBy: "Superrisk Studio",
         logo: srsLogo,
+        lore: "Another armor piece has been found! This one was hidden in a small cave, in which was carved a primitive stone altar. These gloves were made in the same style of the boots: they seem to resonate with that mysterious echo, amplifying its power. It's clear that these protections are infused with an ancient magic, or maybe a technology so advanced it defies the modern knowledge",
         socials: {
-            instagram: "",
-            website: "",
-            twitter: "",
+            instagram: "https://www.instagram.com/superrisk_studio/",
+            website: "www.superrisknft.com",
+            twitter: "https://twitter.com/s_superrisk",
             discord: "",
             twitch: "",
             youtube: ""
@@ -231,10 +241,11 @@ export const BONUS_EQUIPMENTS = [
         sandboxLink: "",
         madeBy: "Superrisk Studio",
         logo: srsLogo,
+        lore: "During an exploration of the Toxic World, ancient relics have been discovered: one of them is this armor piece, made with natural materials. Scientists have analyzed it, but could not determine who was the crafter: probably there are other pieces of this artifact, as it seems to radiate a strange energy, a sort of echo... maybe calling for the other components.",
         socials: {
-            instagram: "",
-            website: "",
-            twitter: "",
+            instagram: "https://www.instagram.com/superrisk_studio/",
+            website: "www.superrisknft.com",
+            twitter: "https://twitter.com/s_superrisk",
             discord: "",
             twitch: "",
             youtube: ""
@@ -251,10 +262,11 @@ export const BONUS_EQUIPMENTS = [
         sandboxLink: "",
         madeBy: "Superrisk Studio",
         logo: srsLogo,
+        lore: "This shield has been crafted with the thorns of dangerous plants and shrubs: even if its protection level is not excellent, the menacing look serves as a deterrent for any attacker. The most skilled warriors can also try to hit with the sharp extremity, causing deep wounds",
         socials: {
-            instagram: "",
-            website: "",
-            twitter: "",
+            instagram: "https://www.instagram.com/superrisk_studio/",
+            website: "www.superrisknft.com",
+            twitter: "https://twitter.com/s_superrisk",
             discord: "",
             twitch: "",
             youtube: ""
@@ -271,10 +283,11 @@ export const BONUS_EQUIPMENTS = [
         sandboxLink: "",
         madeBy: "Superrisk Studio",
         logo: srsLogo,
+        lore: "This exotic weapon has been made with the remainings of a Toxic Snake: it's quite an unusual design, but it seems to work pretty well. Its blade, even if a bit dull, can be deadly thanks to the poison that flows from the snake head towards the glowing tip",
         socials: {
-            instagram: "",
-            website: "",
-            twitter: "",
+            instagram: "https://www.instagram.com/superrisk_studio/",
+            website: "www.superrisknft.com",
+            twitter: "https://twitter.com/s_superrisk",
             discord: "",
             twitch: "",
             youtube: ""
@@ -291,6 +304,7 @@ export const BONUS_EQUIPMENTS = [
         sandboxLink: "",
         madeBy: "Not revealed yet",
         logo: tempLogo,
+        lore: "",
         socials: {
             instagram: "",
             website: "",

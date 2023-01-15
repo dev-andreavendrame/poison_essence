@@ -214,6 +214,8 @@ function App() {
                         tokenId={info['tokenId']}
                         madeBy={info['madeBy']}
                         logo={info['logo']}
+                        lore={info['lore']}
+                        socials={info["socials"]}
                         wallet={currentAccount}
                       />
                     </Box>
@@ -247,6 +249,8 @@ function App() {
                         tokenId={info['tokenId']}
                         madeBy={info['madeBy']}
                         logo={info['logo']}
+                        lore={info['lore']}
+                        socials={info["socials"]}
                         wallet={currentAccount}
                       />
                     </Box>
