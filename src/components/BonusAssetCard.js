@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import './FlipCard.css';
+import { styled } from '@mui/material/styles';
+import './FlipCard.css';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -10,13 +12,28 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import { Grid, Modal, SvgIcon, Collapse, IconButton } from '@mui/material';
 import { Grid, Modal, SvgIcon, Collapse, IconButton } from '@mui/material';
 import FlipCard from './FlipCard';
 import PurchaseConfirmationPopup from './PurchaseConfirmationPopup';
 import SaleAuthorizationPopup from './SaleAuthorizationPopup';
 import { ASSET_MARKET_LOGIC_ADDRESS, peTokenReadable } from './smart_contracts/blockchainConfig/PolygonConfig';
 const ethers = require('ethers');
+
+// ExpandMore styling
+const ExpandMore = styled((props) => {
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+    }),
+}));
+
 
 // ExpandMore styling
 const ExpandMore = styled((props) => {
@@ -76,7 +93,22 @@ function BonusAssetCard(props) {
 
 
     // --- rendering ---
+
+    // --- lore section ---
+    const [expanded, setExpanded] = useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
+    const closeLoreExpand = () => {
+        if (expanded) setExpanded(false);
+    }
+
+
+    // --- rendering ---
     return (
+        <Card sx={{ borderRadius: 3, boxShadow: 24, backgroundColor: '#7f33c5' }} onMouseLeave={closeLoreExpand}>
         <Card sx={{ borderRadius: 3, boxShadow: 24, backgroundColor: '#7f33c5' }} onMouseLeave={closeLoreExpand}>
             <CardContent>
                 <Typography sx={{ mb: 1.5, fontWeight: 'bold', textAlign: 'left', color: "white" }} variant='h6' >
@@ -133,6 +165,7 @@ function BonusAssetCard(props) {
                         </Box>
                     </Collapse>
                 </Box>
+
 
             </CardContent>
 

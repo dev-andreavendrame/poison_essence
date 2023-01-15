@@ -11,9 +11,18 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import { SvgIcon } from '@mui/material';
 
 
+// icons
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LanguageIcon from '@mui/icons-material/Language';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { SvgIcon } from '@mui/material';
+
+
 function FlipCard(props) {
 
     // Change Button className to 'buttonGreen' when 'disabled == false'
+
 
 
     return (
@@ -28,8 +37,10 @@ function FlipCard(props) {
                 <Box className="flip-card-back">
                     <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
                         <Typography sx={{ fontSize: 16, color: "white", mt: 2 }}>
+                        <Typography sx={{ fontSize: 16, color: "white", mt: 2 }}>
                             Made by:
                         </Typography>
+                        <Box sx={{ width: 70, height: 70, mt: 1 }}>
                         <Box sx={{ width: 70, height: 70, mt: 1 }}>
                             <Image src={props.logo} alt='SRS logo' />
                         </Box>
@@ -93,6 +104,10 @@ function FlipCard(props) {
     );
 
 } export default FlipCard;
+
+
+
+  // props.socials['instagram']
 
 
 
