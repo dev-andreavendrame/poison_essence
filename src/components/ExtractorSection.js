@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { extractorLogicReadable, extractorLogicWritable, extractorTokenReadable, peTokenReadable } from './smart_contracts/blockchainConfig/PolygonConfig';
 import PoisonEssenceCollectionData from './smart_contracts/PoisonEssenceData.json';
 import { POLYGON_MINE_BLOCK_TIME } from './smart_contracts/blockchainConfig/PolygonConfig';
- 
+
 
 import Image from 'mui-image';
 import { Grid, Paper, Box, Button, Typography, TextField } from '@mui/material';
@@ -23,7 +23,7 @@ function ExtractorSection(props) {
     const [stakedExtractors, setStakedExtractors] = useState(0);
     const [freeExtractors, setFreeExtractors] = useState(0);
     const [message, setMessage] = useState('');
-    
+
 
 
 
@@ -217,8 +217,8 @@ function ExtractorSection(props) {
                                     id="message"
                                     name="message"
                                     onChange={handleChange}
-                                    label="Extractors number" 
-                                    />
+                                    label="Extractors number"
+                                />
                             </Grid>
                             <Grid item xs={3}>
                                 <Button className="buttonGreen" sx={{ ml: 1, mt: 1, borderRadius: 2 }} variant="contained" size='small' fullWidth onClick={depositExtractors}>
@@ -232,11 +232,9 @@ function ExtractorSection(props) {
                             </Grid>
                         </Grid>
 
-                        <a href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/105358272762175259458146981548426915326652569204453104744298191896506852704456" rel="noreferrer">
-                            <Button className='buttonDark' sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 2, borderRadius: 2 }} variant="contained" size="large" fullWidth>
-                                Buy new Extractor
-                            </Button>
-                        </a>
+                        <Button className='buttonDark' href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/105358272762175259458146981548426915326652569204453104744298191896506852704456" sx={{ color: '#a1c126', backgroundColor: "#303030", border: 3, borderColor: '#a1c126', ml: 1, mt: 2, borderRadius: 2 }} variant="contained" size="large" fullWidth>
+                            Buy new Extractor
+                        </Button>
                     </Box>
                 </Grid>
             </Grid>
