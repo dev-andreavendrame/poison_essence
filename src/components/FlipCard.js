@@ -11,14 +11,6 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import { SvgIcon } from '@mui/material';
 
 
-// icons
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LanguageIcon from '@mui/icons-material/Language';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import { SvgIcon } from '@mui/material';
-
-
 function FlipCard(props) {
 
     // Change Button className to 'buttonGreen' when 'disabled == false'
