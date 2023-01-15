@@ -42,3 +42,103 @@
     color: white;
     transform: rotateY(180deg);
   }
+
+
+  /* ----------------------------
+     ---- small social icons ----
+     ---------------------------- */
+
+     .smallSocialIcon {
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 26px;
+      color: #fff;
+      border-radius: 50%;
+      outline: 2px solid #fff;
+      transition-property: outline-offset, outline-color, background-color;
+      transition-duration: .25s;
+    }
+    
+    .smallSocialIcon:hover {
+      outline-offset: 4px;
+    }
+    
+    .smallSocialIcon:hover {
+      animation: shake .25s;
+    }
+    
+    .smallSocialIcon--instagram:hover {
+      color: white;
+      background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #2854eb 90%);
+      outline-color: #a02d76;
+    }
+
+    .smallSocialIcon--website:hover {
+      color: white;
+      background-image: radial-gradient(circle at 0% 0%, #d7eb86 15%, #a1c126 40%, #7c9710 60%, #3f4d07 90% );
+      outline-color: #a1c126;
+    }
+    
+    .smallSocialIcon--twitter:hover {
+      background-color: #1da1f2;
+      outline-color: #1da1f2;
+    }
+    
+    .smallSocialIcon--discord:hover {
+      color: white;
+      background-image: radial-gradient(circle at 0% 0%, #8aa0ef 15%, #718ae6 40%, #7289DA 60%, #556fce 90% );
+      outline-color: #7289DA;
+    }
+
+    .smallSocialIcon--twitch:hover {
+      color: white;
+      background-image: radial-gradient(circle at 0% 0%, #a367fd 15%, #9a57ff 40%, #9146FF 60%, #732ae2 90% );
+      outline-color: #9146FF;
+    }
+
+    .smallSocialIcon--youtube:hover {
+      color: white;
+      background-image: radial-gradient(circle at 0% 0%, #ff5050 15%, #ff1010 40%, #ff0000 60%, #d10000 90% );
+      outline-color: #ff0000;
+    }
+    
+    @keyframes shake {
+      10%{transform: rotate(15deg);}
+      20%{transform: rotate(-15deg);}
+      30%{transform: rotate(15deg);}
+      40%{transform: rotate(-15deg);}
+    }
+
+
+
+  /* ----------------------------
+     ---- small sandbox icon ----
+     ---------------------------- */
+
+     .smallSandboxIcon {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 26px;
+      color: #fff;
+      border-radius: 50%;
+      outline: 2px solid #fff;
+      transition-property: outline-offset, outline-color, background-color;
+      transition-duration: .25s;
+      color: white;
+    }
+    
+    .smallSandboxIcon:hover {
+      animation: shake .25s;
+      outline-offset: 4px;
+      color: #00ADEF;
+      background-color: #14181D;
+      outline-color: #00ADEF;
+    }
