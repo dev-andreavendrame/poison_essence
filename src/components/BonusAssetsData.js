@@ -21,7 +21,7 @@ import peLegs from './images/pe_legs.jpg';
 import peChest from './images/pe_chest.jpg';
 import peStingShield from './images/pe_shield_sting.jpg';
 import peSnakeSword from './images/pe_snake_sword.jpg';
-import blurred from './images/New_asset_blurred.png';
+import peRailGun from './images/poison_rail_gun.png';
 
 // <-- equipment end
 
@@ -295,22 +295,22 @@ export const BONUS_EQUIPMENTS = [
     },
     {
         id: 6,
-        name: "Unknown",
-        part: "Unknown",
-        cost: 0,
-        image: blurred,
+        name: "Poison Rail Gun",
+        part: "Sword",
+        cost: 2000,
+        image: peRailGun,
         internalId: 15,
-        tokenId: "",
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191912999527220896",
         sandboxLink: "",
-        madeBy: "Not revealed yet",
+        madeBy: "Youri",
         logo: tempLogo,
         lore: "",
         socials: {
             instagram: "",
             website: "",
-            twitter: "",
+            twitter: "https://twitter.com/YouriYourri",
             discord: "",
-            twitch: "",
+            twitch: "https://www.twitch.tv/yourii",
             youtube: ""
         }
     }
