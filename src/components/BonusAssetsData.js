@@ -299,7 +299,7 @@ export const BONUS_EQUIPMENTS = [
         part: "Sword",
         cost: 2000,
         image: peRailGun,
-        internalId: 15,
+        internalId: 16,
         tokenId: "105358272762175259458146981548426915326652569204453104744298191912999527220896",
         sandboxLink: "",
         madeBy: "Youri",
