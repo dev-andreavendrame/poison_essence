@@ -215,6 +215,7 @@ function App() {
                         madeBy={info['madeBy']}
                         logo={info['logo']}
                         socials={info['socials']}
+                        lore={info['lore']}
                         wallet={currentAccount}
                       />
                     </Box>
@@ -249,6 +250,7 @@ function App() {
                         madeBy={info['madeBy']}
                         logo={info['logo']}
                         socials={info['socials']}
+                        lore={info['lore']}
                         wallet={currentAccount}
                       />
                     </Box>
