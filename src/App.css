@@ -97,14 +97,14 @@
 
 .buttonDark {
   background-color: #303030 !important;
-  color: '#a1c126' !important;
+  color: #a1c126 !important;
   border: 3 !important;
   border-color: '#a1c126' !important;
 }
 
 .buttonDark:hover {
   background-color: #555555 !important;
-
+  color: #a1c126 !important;
   filter: brightness(110%);
 }
 
@@ -160,6 +160,12 @@
   color: white;
   background-image: radial-gradient(circle at 0% 0%, #d7eb86 15%, #a1c126 40%, #7c9710 60%, #3f4d07 90% );
   outline-color: #a1c126;
+}
+
+.icon--discord:hover {
+  color: white;
+  background-image: radial-gradient(circle at 0% 0%, #8aa0ef 15%, #718ae6 40%, #7289DA 60%, #556fce 90% );
+  outline-color: #7289DA;
 }
 
 @keyframes shake {
