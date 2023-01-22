@@ -1,0 +1,1 @@
+export const NOT_ENOUGH_PE_TO_COMPLETE_THE_PURCHASE = "execution reverted: Not enough tokens owned to complete the purchase";

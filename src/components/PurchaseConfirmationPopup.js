@@ -2,6 +2,7 @@ import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import SaleAuthorizationPopup from './SaleAuthorizationPopup';
 import { assetMarketLogicWritable } from './smart_contracts/blockchainConfig/PolygonConfig';
+import { NOT_ENOUGH_PE_TO_COMPLETE_THE_PURCHASE } from './smart_contracts/TransactionErrors';
 
 
 function PurchaseConfirmationPopup(props) {
@@ -38,9 +39,13 @@ function PurchaseConfirmationPopup(props) {
         .then(buyResult => {
             console.log("Bought %d copies of the %s asset");
         }).catch(error => {
-            console.log("Error buying asset");
-            console.log(error);
-        })
+            if ((error.message).includes(NOT_ENOUGH_PE_TO_COMPLETE_THE_PURCHASE)) {
+                console.log("Show popup fondi non sufficienti");
+                // SHOW HERE THE POPUP
+            } else {
+                console.log("Unknown error while buying asset copies");
+            }
+        });
     }
 
     return (
