@@ -1,6 +1,7 @@
 // Logos start -->
 import srsLogo from './images/SRS_logo.png'; 
 import tempLogo from './images/temp_logo.jpg';
+import cinziaGrabrielLogo from './images/cinGabLogo.jpg';
 // Logos end <--
 
 // Assets start -->
@@ -11,6 +12,7 @@ import snail from './images/poison_snail.jpg';
 import plantivorous from './images/plantivorous.jpg';
 import wasp from './images/flower_wasp.jpg';
 import frozenSnail from './images/frozen_poison_snail.jpg';
+import pe_scientist from './images/pe_scientist.png';
 // <-- assets end
 
 // Equipment start -->
@@ -163,6 +165,26 @@ export const BONUS_ASSETS = [{
         twitch: "",
         youtube: ""
     }
+},
+    {
+        id: 7,
+        name: "PE Scientist",
+        cost: 3000,
+        image: pe_scientist,
+        internalId: 17,
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191914099038848672",
+        sandboxLink: "",
+        madeBy: "CinziaGabrielPH",
+        logo: cinziaGrabrielLogo,
+        lore: "Not available yet",
+        socials: {
+            instagram: "",
+            website: "https://cinziagabrielph.com/",
+            twitter: "https://twitter.com/CinziaGabrielPH",
+            discord: "",
+            twitch: "",
+            youtube: ""
+        }
 }]
     ;
 
