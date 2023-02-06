@@ -2,6 +2,7 @@
 import srsLogo from './images/SRS_logo.png'; 
 import tempLogo from './images/temp_logo.jpg';
 import cinziaGrabrielLogo from './images/cinGabLogo.jpg';
+import metaFuturaLogo from './images/meta_futura_logo.jpg';
 // Logos end <--
 
 // Assets start -->
@@ -13,6 +14,7 @@ import plantivorous from './images/plantivorous.jpg';
 import wasp from './images/flower_wasp.jpg';
 import frozenSnail from './images/frozen_poison_snail.jpg';
 import pe_scientist from './images/pe_scientist.png';
+import pe_lotus from './images/pe_venom_lotus.png';
 // <-- assets end
 
 // Equipment start -->
@@ -184,8 +186,29 @@ export const BONUS_ASSETS = [{
             discord: "",
             twitch: "",
             youtube: ""
-        }
-}]
+        },
+},
+{
+    id: 8,
+    name: "Venom Lotus",
+    cost: 700,
+    image: pe_lotus,
+    internalId: 18,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191915198550476448",
+    sandboxLink: "",
+    madeBy: "Meta Futura Studio",
+    logo: metaFuturaLogo,
+    lore: "Not available yet",
+    socials: {
+        instagram: "",
+        website: "metafuturastudio.com",
+        twitter: "https://twitter.com/FuturaMeta",
+        discord: "https://discord.com/invite/Qcxh8x4uBN",
+        twitch: "",
+        youtube: ""
+    },
+}
+]
     ;
 
 export const BONUS_EQUIPMENTS = [
