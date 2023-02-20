@@ -3,6 +3,7 @@ import srsLogo from './images/SRS_logo.png';
 import tempLogo from './images/temp_logo.jpg';
 import cinziaGrabrielLogo from './images/cinGabLogo.jpg';
 import metaFuturaLogo from './images/meta_futura_logo.jpg';
+import anandjoiceLogo from './images/anandjoice_logo.png';
 // Logos end <--
 
 // Assets start -->
@@ -15,6 +16,7 @@ import wasp from './images/flower_wasp.jpg';
 import frozenSnail from './images/frozen_poison_snail.jpg';
 import pe_scientist from './images/pe_scientist.png';
 import pe_lotus from './images/pe_venom_lotus.png';
+import pe_fountain from './images/pe_fountain.png';
 // <-- assets end
 
 // Equipment start -->
@@ -204,6 +206,26 @@ export const BONUS_ASSETS = [{
         website: "metafuturastudio.com",
         twitter: "https://twitter.com/FuturaMeta",
         discord: "https://discord.com/invite/Qcxh8x4uBN",
+        twitch: "",
+        youtube: ""
+    },
+},
+{
+    id: 9,
+    name: "Poison Fountain",
+    cost: 1500,
+    image: pe_fountain,
+    internalId: 19,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191916298062104224",
+    sandboxLink: "",
+    madeBy: "Anandjoice",
+    logo: anandjoiceLogo,
+    lore: "Not available yet",
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "https://twitter.com/anandjoice18",
+        discord: "",
         twitch: "",
         youtube: ""
     },
