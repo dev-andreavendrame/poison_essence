@@ -22,14 +22,13 @@ export function Charts() {
      
       return(
 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "72vh" }}>
-    <BarChart width={800} height={600} data={nftMints} barCategoryGap={'15%'}>
+    <BarChart width={800} height={600} data={nftMints} barCategoryGap={'25%'}>
       <CartesianGrid stroke="white"/>
       <XAxis dataKey="assetName" stroke="white" />
       <YAxis stroke="white"/>
       <Tooltip />
       <Legend wrapperStyle={{ backgroundColor: "#4F1C6F", padding: "5px" }}/>
       <Bar dataKey="assetMinted" fill="#8884d8" animationDuration={2200} />
-      <Bar dataKey="UniqueHolders" fill="#82ca9d" animationDuration={2200}/>
     </BarChart>
 </div>
 
