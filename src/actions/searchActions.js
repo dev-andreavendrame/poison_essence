@@ -8,13 +8,23 @@ export const fetchMints = () => dispatch => {
     const arrayMints = [
         {
             assetName: 'Lumaca',
-            assetMinted: 500,
+            assetMinted: 50,
             UniqueHolders: 20,
         },
         {
             assetName: 'Pianta',
-            assetMinted: 300,
+            assetMinted: 30,
             UniqueHolders: 10,
+        },
+        {
+            assetName: 'Spada',
+            assetMinted: 60,
+            UniqueHolders: 10,
+        },
+        {
+            assetName: 'Scudo',
+            assetMinted: 30,
+            UniqueHolders: 20,
         },
     ]
 
