@@ -11,10 +11,14 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import MButton from '@mui/material/Button';
 import { AppBar, Grid, Typography } from '@mui/material';
 
+//React router for more pages
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+
 // Custom components
 import BonusAssetCard from './components/BonusAssetCard';
 import ExtractorSection from './components/ExtractorSection';
 import PageFooter from './components/PageFooter';
+import {Charts} from './components/Charts';
 
 // Other imports
 import peLogo from './components/images/frog_logo.png';
@@ -152,6 +156,7 @@ function App() {
   // Interface definition
 
   return (
+    <BrowserRouter>
     <div className="App" class="bg" >
       <AppBar position="static" sx={{ height: 130, backgroundColor: "#551b8c", boxShadow: 24 }}>
 
@@ -179,8 +184,8 @@ function App() {
         </Box>
       </AppBar>
 
-
-
+      <Routes>
+      <Route  path='/*' element={
       <div>
         <div class="mt-5 container">
 
@@ -262,10 +267,15 @@ function App() {
           </Grid>
         </div>
       </div>
-
+      } />
+      <Route exact path='/chart/developing' element={
+        <Charts/>
+        } />
+      </Routes>
 
       <PageFooter />
 
     </div >
+    </BrowserRouter>
   );
 } export default App;
