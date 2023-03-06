@@ -4,6 +4,7 @@ import tempLogo from './images/temp_logo.jpg';
 import cinziaGrabrielLogo from './images/cinGabLogo.jpg';
 import metaFuturaLogo from './images/meta_futura_logo.jpg';
 import anandjoiceLogo from './images/anandjoice_logo.png';
+import lastYearTryerLogo from './images/LastYearTryerLogo.jpg';
 // Logos end <--
 
 // Assets start -->
@@ -17,6 +18,7 @@ import frozenSnail from './images/frozen_poison_snail.jpg';
 import pe_scientist from './images/pe_scientist.png';
 import pe_lotus from './images/pe_venom_lotus.png';
 import pe_fountain from './images/pe_fountain.png';
+import peAmpoule from './images/pe_ampoule.png';
 // <-- assets end
 
 // Equipment start -->
@@ -378,6 +380,27 @@ export const BONUS_EQUIPMENTS = [
             twitter: "https://twitter.com/YouriYourri",
             discord: "",
             twitch: "https://www.twitch.tv/yourii",
+            youtube: ""
+        }
+    },
+    {
+        id: 7,
+        name: "Poison Ampoule",
+        part: "Chest",
+        cost: 2500,
+        image: peAmpoule,
+        internalId: 20,
+        tokenId: "105358272762175259458146981548426915326652569204453104744298191917397573732000",
+        sandboxLink: "",
+        madeBy: "LastYearTryer",
+        logo: lastYearTryerLogo,
+        lore: "",
+        socials: {
+            instagram: "",
+            website: "",
+            twitter: "https://twitter.com/monestweet",
+            discord: "",
+            twitch: "",
             youtube: ""
         }
     }
