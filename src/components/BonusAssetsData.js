@@ -1,10 +1,11 @@
 // Logos start -->
-import srsLogo from './images/SRS_logo.png'; 
+import srsLogo from './images/SRS_logo.png';
 import tempLogo from './images/temp_logo.jpg';
 import cinziaGrabrielLogo from './images/cinGabLogo.jpg';
 import metaFuturaLogo from './images/meta_futura_logo.jpg';
 import anandjoiceLogo from './images/anandjoice_logo.png';
 import lastYearTryerLogo from './images/LastYearTryerLogo.jpg';
+import voxelLadyLogo from './images/voxelLadyLogo.jpg';
 // Logos end <--
 
 // Assets start -->
@@ -19,6 +20,7 @@ import pe_scientist from './images/pe_scientist.png';
 import pe_lotus from './images/pe_venom_lotus.png';
 import pe_fountain from './images/pe_fountain.png';
 import peAmpoule from './images/pe_ampoule.png';
+import peLizard from './images/poisonLizard.png';
 // <-- assets end
 
 // Equipment start -->
@@ -172,25 +174,25 @@ export const BONUS_ASSETS = [{
         youtube: ""
     }
 },
-    {
-        id: 7,
-        name: "PE Scientist",
-        cost: 3000,
-        image: pe_scientist,
-        internalId: 17,
-        tokenId: "105358272762175259458146981548426915326652569204453104744298191914099038848672",
-        sandboxLink: "",
-        madeBy: "CinziaGabrielPH",
-        logo: cinziaGrabrielLogo,
-        lore: "Not available yet",
-        socials: {
-            instagram: "",
-            website: "https://cinziagabrielph.com/",
-            twitter: "https://twitter.com/CinziaGabrielPH",
-            discord: "",
-            twitch: "",
-            youtube: ""
-        },
+{
+    id: 7,
+    name: "PE Scientist",
+    cost: 3000,
+    image: pe_scientist,
+    internalId: 17,
+    tokenId: "105358272762175259458146981548426915326652569204453104744298191914099038848672",
+    sandboxLink: "",
+    madeBy: "CinziaGabrielPH",
+    logo: cinziaGrabrielLogo,
+    lore: "Not available yet",
+    socials: {
+        instagram: "",
+        website: "https://cinziagabrielph.com/",
+        twitter: "https://twitter.com/CinziaGabrielPH",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    },
 },
 {
     id: 8,
@@ -210,8 +212,9 @@ export const BONUS_ASSETS = [{
         discord: "https://discord.com/invite/Qcxh8x4uBN",
         twitch: "",
         youtube: ""
-    },
+    }
 },
+
 {
     id: 9,
     name: "Poison Fountain",
@@ -230,7 +233,27 @@ export const BONUS_ASSETS = [{
         discord: "",
         twitch: "",
         youtube: ""
-    },
+    }
+},
+{
+    id: 10,
+    name: "Poison Lizard",
+    cost: 3500,
+    image: peLizard,
+    internalId: 21,
+    tokenId: "",
+    sandboxLink: "",
+    madeBy: "Voxel Ladt",
+    logo: voxelLadyLogo,
+    lore: "",
+    socials: {
+        instagram: "",
+        website: "",
+        twitter: "https://twitter.com/LadyVoxel",
+        discord: "",
+        twitch: "",
+        youtube: ""
+    }
 }
 ]
     ;
